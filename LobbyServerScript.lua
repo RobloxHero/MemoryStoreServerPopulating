@@ -41,10 +41,11 @@ local function TeleportToFirstAvailableServer(player, map)
 				-- If the Server has space then teleport
 				if ReadSuccess and #items > 0 then
 					local PlayersInQueue = tonumber(items[1])
-					if PlayersInQueue < MaxPlayersInServer then
+					if PlayersInQueue > 1 and PlayersInQueue < MaxPlayersInServer then
 						FoundMatch = true
 						SendChatMessageEvent:FireAllClients("Found Server: "..ServerId.. " with ".. PlayersInQueue.. " players in the queue.")
-						local TeleportOptions = { ["ServerInstanceId"] = ServerId }
+						local TeleportOptions = Instance.new("TeleportOptions")
+						TeleportOptions.ServerInstanceId = ServerId
 						local Result = TeleportService:TeleportAsync(PlaceId, {player}, TeleportOptions)
 						SendChatMessageEvent:FireAllClients(Result)
 					end
