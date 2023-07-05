@@ -10,20 +10,26 @@ local FindMatchEvent = Instance.new("RemoteEvent")
 FindMatchEvent.Name = "FindMatch"
 FindMatchEvent.Parent = ReplicatedStorage
 
+local SendChatMessageEvent = Instance.new("RemoteEvent")
+SendChatMessageEvent.Name = "SendChatMessage"
+SendChatMessageEvent.Parent = ReplicatedStorage
+
 local LastServerInTheList = nil
 
 -- Find the first available Server and teleport.
 local function TeleportToFirstAvailableServer(player, map)
 	local ServersPageSize = 100
-  -- Pull a list of Available Servers from Memory Sorted Map
+	local FoundMatch = false
+	-- Pull a list of Available Servers from Memory Sorted Map
 	local GetServersSuccess, GetServersResult = pcall(function()
 		return ServersListStore:GetRangeAsync(Enum.SortDirection.Ascending, ServersPageSize, LastServerInTheList)
 	end)
-  -- If the Sorted Map Contains Servers
+	-- If the Sorted Map Contains Servers
 	if GetServersSuccess == true then
-    -- Loop through the list and check the queue for the server with the Server Job ID
-    -- The queue only contains a Player Count
-		for _, item in ipairs(GetServersResult) do
+		-- Loop through the list and check the queue for the server with the Server Job ID
+		-- The queue only contains a Player Count
+		SendChatMessageEvent:FireAllClients(#GetServersResult.." Servers Found")
+		for count, item in ipairs(GetServersResult) do
 			local ServerId = item["key"]
 			if ServerId ~= "0" then
 				local PlaceId = tonumber(item["value"])
@@ -32,20 +38,26 @@ local function TeleportToFirstAvailableServer(player, map)
 					local result  = ServerQueue:ReadAsync(1, true, 30)
 					return result
 				end)
-        -- If the Server has space then teleport
+				-- If the Server has space then teleport
 				if ReadSuccess and #items > 0 then
 					local PlayersInQueue = tonumber(items[1])
 					if PlayersInQueue < MaxPlayersInServer then
-						print("Found Server: "..ServerId.. " with ".. PlayersInQueue.. " players in the queue.")
+						FoundMatch = true
+						SendChatMessageEvent:FireAllClients("Found Server: "..ServerId.. " with ".. PlayersInQueue.. " players in the queue.")
 						local TeleportOptions = { ["ServerInstanceId"] = ServerId }
-						TeleportService:TeleportAsync(PlaceId, {player}, TeleportOptions)
+						local Result = TeleportService:TeleportAsync(PlaceId, {player}, TeleportOptions)
+						SendChatMessageEvent:FireAllClients(Result)
 					end
 				end
 				wait(1)
 			end
+			if count == #GetServersResult and FoundMatch == false then
+				local Result = TeleportService:TeleportAsync(map, {player})
+				SendChatMessageEvent:FireAllClients(Result)
+			end
 		end
 	end
-  -- If there are no servers in the Memory Sorted Map then just teleport to the place
+	-- If there are no servers in the Memory Sorted Map then just teleport to the place
 	if GetServersSuccess == false then
 		TeleportService:TeleportAsync(map, {player})
 	end
