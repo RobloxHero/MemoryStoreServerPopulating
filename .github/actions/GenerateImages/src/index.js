@@ -1,7 +1,7 @@
 const { setFailed, getInput, debug } = require( '@actions/core' );
 const { context, getOctokit } = require( '@actions/github' );
 import * as d3 from "d3";
-import * as sharp from "sharp"
+import svg2img from 'svg2img'
 import fs from "fs"
 import { JSDOM } from "jsdom"
 
@@ -14,15 +14,10 @@ function createSvgDocument() {
       .attr("preserveAspectRatio", true)
       .attr('xmlns', 'http://www.w3.org/2000/svg')
       .attr("backgroundColor", "blue")
-      sharp(Buffer.from(body.html()))
-      .png()
-      .toFile("image1.png")
-      .then(function(info) {
-        console.log(info)
-      })
-      .catch(function(err) {
-        console.log(err)
-      })
+      svg2img(body.html(), function(error, buffer) {
+        //returns a Buffer
+        fs.writeFileSync('image1.png', buffer);
+    });
 }
 
 ( async function main() {
