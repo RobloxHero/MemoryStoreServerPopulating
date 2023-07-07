@@ -13,7 +13,7 @@ function createSvgDocument() {
       .attr("height", "300px")
       .attr("preserveAspectRatio", true)
       .attr('xmlns', 'http://www.w3.org/2000/svg')
-      .attr("backgroundColor", "blue")
+      .attr("color", "blue")
       const opts = {
         fitTo: {
           mode: 'width',
