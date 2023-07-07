@@ -8,7 +8,7 @@ const { context, getOctokit } = require( '@actions/github' );
     const repository = context.payload.repository.name
     const owner = context.payload.sender.login
     console.log(context)
-    let issues = octokit.rest.issues.listForRepo({
+    let issues = await octokit.rest.issues.listForRepo({
       owner,
       repository,
     });
