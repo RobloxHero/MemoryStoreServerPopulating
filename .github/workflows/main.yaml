@@ -1,6 +1,5 @@
 name: 'Roblox Forum Github Stats Images'
 run-name: 'Generating Images'
-description: 'This is an Action you can add to a repository, that will create your Github Stats Images.'
 defaults:
   run:
     shell: 'bash'
@@ -14,8 +13,10 @@ jobs:
     name: 'Generating Images'
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
+        env: 
+            Username: ${{ github.actor }}
+            Access_Token: ${{ secrets.Roblox_Images_Access_Token }}
         with:
           node-version: '14'
       - run: npm install -g bats
