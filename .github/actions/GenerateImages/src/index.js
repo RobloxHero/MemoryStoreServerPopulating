@@ -1,7 +1,7 @@
 const { setFailed, getInput, debug } = require( '@actions/core' );
 const { context, getOctokit } = require( '@actions/github' );
 import * as d3 from "d3";
-import svg2img from 'svg2img'
+const { Resvg } = require('@resvg/resvg-js')
 import fs from "fs"
 import { JSDOM } from "jsdom"
 
@@ -14,10 +14,17 @@ function createSvgDocument() {
       .attr("preserveAspectRatio", true)
       .attr('xmlns', 'http://www.w3.org/2000/svg')
       .attr("backgroundColor", "blue")
-      svg2img(body.html(), function(error, buffer) {
-        //returns a Buffer
-        fs.writeFileSync('image1.png', buffer);
-    });
+      const opts = {
+        fitTo: {
+          mode: 'width',
+          value: 500,
+        },
+      }
+      const resvg = new Resvg(body.html())
+      const pngData = resvg.render()
+      const pngBuffer = pngData.asPng()
+      fs.writeFileSync('image1.png', pngBuffer);
+      
 }
 
 ( async function main() {
