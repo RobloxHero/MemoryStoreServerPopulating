@@ -16,18 +16,16 @@ let ListItem = `
   `
 
 function createIssueListPng() {
-  
-      const opts = {
-        fitTo: {
-          mode: 'width',
-          value: 500,
-        },
-      }
-      const resvg = new Resvg(ListItem)
-      const pngData = resvg.render()
-      const pngBuffer = pngData.asPng()
-      fs.writeFileSync('image1.png', pngBuffer);
-      
+  const opts = {
+    fitTo: {
+      mode: 'width',
+      value: 500,
+    },
+  }
+  const resvg = new Resvg(ListItem)
+  const pngData = resvg.render()
+  const pngBuffer = pngData.asPng()
+  fs.writeFileSync('image1.png', pngBuffer)     
 }
 
 ( async function main() {
@@ -41,7 +39,7 @@ function createIssueListPng() {
       owner,
       repo,
     });
-    createSvgDocument()
+    createIssueListPng()
     console.log(issues)
   }
   catch(e){
