@@ -2,24 +2,30 @@ const { setFailed, getInput, debug } = require( '@actions/core' );
 const { context, getOctokit } = require( '@actions/github' );
 import * as d3 from "d3";
 import * as sharp from "sharp"
+import fs from "fs"
+import { JSDOM } from "jsdom"
 
 function createSvgDocument() {
-
+  const dom = new JSDOM(`<!DOCTYPE html><body></body>`);
+  let body = d3.select(dom.window.document.querySelector("body"))
   const background = d3.create("svg")
+  .append(body)
       .attr("width", "500px")
       .attr("height", "300px")
       .attr("preserveAspectRatio", true)
+      .attr('xmlns', 'http://www.w3.org/2000/svg')
       .attr("backgroundColor", "blue")
-      background.append(text)
-      sharp(background)
-      .png()
-      .toFile("image1.png")
-      .then(function(info) {
-        console.log(info)
-      })
-      .catch(function(err) {
-        console.log(err)
-      })
+      fs.writeFileSync('out.svg', body.html());
+      // background.append(text)
+      // sharp(background)
+      // .png()
+      // .toFile("image1.png")
+      // .then(function(info) {
+      //   console.log(info)
+      // })
+      // .catch(function(err) {
+      //   console.log(err)
+      // })
 }
 
 ( async function main() {
