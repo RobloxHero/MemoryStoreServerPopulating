@@ -8,8 +8,7 @@ import { JSDOM } from "jsdom"
 function createSvgDocument() {
   const dom = new JSDOM(`<!DOCTYPE html><body></body>`);
   let body = d3.select(dom.window.document.querySelector("body"))
-  const background = d3.create("svg")
-  .append(body)
+  body.append("rect")
       .attr("width", "500px")
       .attr("height", "300px")
       .attr("preserveAspectRatio", true)
@@ -39,7 +38,7 @@ function createSvgDocument() {
       owner,
       repo,
     });
-   createSvgDocument()
+    createSvgDocument()
     console.log(issues)
   }
   catch(e){
