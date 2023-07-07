@@ -15,12 +15,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-          env:
-            GITHUB_TOKEN: ${{ secrets.Roblox_Images_Access_Token }}
       - name: Build Action
         run: |
           npm install && npm run build
-       working-directory: ./.github/actions/GenerateImages/
+          working-directory: ./.github/actions/GenerateImages/
+          env:
+            GITHUB_TOKEN: ${{ secrets.Roblox_Images_Access_Token }}
       - name: Run action
         uses: ./.github/actions/GenerateImages/
         with:
