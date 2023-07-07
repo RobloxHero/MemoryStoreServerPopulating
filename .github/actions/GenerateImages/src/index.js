@@ -5,22 +5,25 @@ const { Resvg } = require('@resvg/resvg-js')
 import fs from "fs"
 import { JSDOM } from "jsdom"
 
-function createSvgDocument() {
-  const dom = new JSDOM(`<!DOCTYPE html><body></body>`);
-  let body = d3.select(dom.window.document.querySelector("body"))
-  body.append("svg")
-      .attr("width", "500px")
-      .attr("height", "300px")
-      .attr("preserveAspectRatio", true)
-      .attr('xmlns', 'http://www.w3.org/2000/svg')
-      .attr("color", "blue")
+let ListItem = `
+  <?xml version="1.0" encoding="UTF-8"?>
+    <svg id="Background" xmlns="http://www.w3.org/2000/svg" width="323" height="54" viewBox="0 0 323 54">
+      <g id="Frame">
+        <rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>
+      </g>
+    <text transform="translate(8.31 26.44) scale(.97 1)" style="fill: #fff; font-family: BadaBoomProBB, &apos;BadaBoom Pro BB&apos;; font-size: 26.23px;"><tspan x="0" y="0">Title</tspan></text>
+  </svg>
+  `
+
+function createIssueListPng() {
+  
       const opts = {
         fitTo: {
           mode: 'width',
           value: 500,
         },
       }
-      const resvg = new Resvg(body.html())
+      const resvg = new Resvg(ListItem)
       const pngData = resvg.render()
       const pngBuffer = pngData.asPng()
       fs.writeFileSync('image1.png', pngBuffer);
