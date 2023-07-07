@@ -16,10 +16,10 @@ jobs:
         with:
           node-version: '16'
       - name: Build Action
-          working-directory: ./.github/actions/GenerateImages/
-          env:
-            GITHUB_TOKEN: ${{ secrets.Roblox_Images_Access_Token }}
-          run: |
+        working-directory: ./.github/actions/GenerateImages/
+        env:
+          GITHUB_TOKEN: ${{ secrets.Roblox_Images_Access_Token }}
+        run: |
             npm install && npm run build
       - name: Run action
         uses: ./.github/actions/GenerateImages/
