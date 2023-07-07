@@ -35,9 +35,7 @@ function createSvgDocument() {
       owner,
       repo,
     });
-    let NumberOfIssuesNotFinished = issues.Map((issue) => {
-      // Look for the labels
-    })
+   createSvgDocument()
     console.log(issues)
   }
   catch(e){
