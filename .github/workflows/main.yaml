@@ -5,12 +5,16 @@ on:
   schedule:
     # Updates Images Every Minute
     - cron:  '0 * * * *'
-runs:
-  using: 'node12'
-  main: 'GatherData.js'
-  env: 
-    sername: ${{ github.actor }}
-    Access_Token: ${{ secrets.Roblox_Images_Access_Token }}
+jobs:
+  Generating_Images:
+    name: 'Generating Images'
+    description: 'Creates Images for the Roblox Forum'
+    runs:
+      using: 'node12'
+      main: 'GatherData.js'
+      env: 
+        sername: ${{ github.actor }}
+        Access_Token: ${{ secrets.Roblox_Images_Access_Token }}
 
 
 
