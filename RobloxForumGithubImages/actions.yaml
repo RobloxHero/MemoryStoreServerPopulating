@@ -1,0 +1,21 @@
+name: 'Roblox Forum Github Stats Images'
+run-name: 'Generating Images'
+description: 'This is an Action you can add to a repository, that will create your Github Stats Images.'
+defaults:
+  run:
+    shell: bash
+    working-directory: ../
+on:
+  schedule:
+    # Updates Images Every Hour
+    - cron:  '0 * * * *'
+jobs:
+  Generating_Images:
+    name: 'Generating Images'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Setting things up'
+        run: |
+          node -v
+
+
