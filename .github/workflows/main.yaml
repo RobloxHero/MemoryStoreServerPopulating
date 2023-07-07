@@ -1,6 +1,8 @@
 name: 'Roblox Forum Github Stats Images'
 run-name: 'Generating Images'
 on:
+  workflow_dispatch:
+    
   schedule:
     - cron:  '*/1 * * * *'
 jobs:
