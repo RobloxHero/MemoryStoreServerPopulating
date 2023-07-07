@@ -17,8 +17,7 @@ jobs:
         env: 
           sername: ${{ github.actor }}
           Access_Token: ${{ secrets.Roblox_Images_Access_Token }}
-      - run: npm install -g bats
-      - run: bats -v
+      - run: node RobloxForumGithubImages/Gatherdata.js
 
 
 
