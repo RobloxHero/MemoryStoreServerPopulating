@@ -15,7 +15,7 @@ function createSvgDocument() {
       .attr("preserveAspectRatio", true)
       .attr('xmlns', 'http://www.w3.org/2000/svg')
       .attr("backgroundColor", "blue")
-      fs.writeFileSync('out.svg', body.html());
+      fs.writeFileSync('image1.svg', body.html());
       // background.append(text)
       // sharp(background)
       // .png()
