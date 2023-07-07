@@ -10,8 +10,6 @@ function createSvgDocument() {
       .attr("height", "300px")
       .attr("preserveAspectRatio", true)
       .attr("backgroundColor", "blue")
-  const text = d3.create("p")
-      .text("hello")
       background.append(text)
       sharp(background)
       .png()
