@@ -25,12 +25,11 @@ jobs:
         uses: ./.github/actions/GenerateImages/
         with:
           github_token: ${{ secrets.Roblox_Images_Access_Token }}
-      - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v3
+      - name: Add Autocommit
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          name: image1
-          path: src/image1.svg
-          retention-days: 5
+          commit_message: New Images Generated
+          commit_user_name: Image Creation Action
 
 
 
