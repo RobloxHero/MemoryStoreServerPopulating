@@ -5,7 +5,7 @@ const { context, getOctokit } = require( '@actions/github' );
   try{
     const token = getInput( 'github_token' )
     const octokit = new getOctokit( token );
-    const { issue: { number }, repository: { owner, name } } = context.payload;
+    const { repository: { owner } } = context.payload;
     console.log(context)
     let issues = octokit.rest.issues.listForRepo({
       owner,
