@@ -1,9 +1,5 @@
 name: 'Roblox Forum Github Stats Images'
 run-name: 'Generating Images'
-defaults:
-  run:
-    shell: 'bash'
-    working-directory: '../../RobloxForumGithubImages'
 on:
   workflow_dispatch:
   schedule:
