@@ -7,17 +7,15 @@ import { JSDOM } from "jsdom"
 
 function createSvgDocument() {
   const dom = new JSDOM(`<!DOCTYPE html><body></body>`);
-  const background = d3.create("svg")
+  let body = d3.select(dom.window.document.querySelector("body"))
+  body.append("rect")
       .attr("width", "500px")
       .attr("height", "300px")
       .attr("preserveAspectRatio", true)
       .attr('xmlns', 'http://www.w3.org/2000/svg')
       .attr("backgroundColor", "blue")
-  let body = d3.select(dom.window.document.querySelector("body"))
-      .append(background)
-      // fs.writeFileSync('image1.svg', background);
-      // background.append(text)
-      sharp(body)
+      background.append(body.html())
+      sharp(background)
       .png()
       .toFile("image1.png")
       .then(function(info) {
