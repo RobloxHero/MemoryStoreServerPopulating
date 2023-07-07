@@ -3,8 +3,8 @@ run-name: 'Generating Images'
 description: 'This is an Action you can add to a repository, that will create your Github Stats Images.'
 defaults:
   run:
-    shell: bash
-    working-directory: ../
+    shell: 'bash'
+    working-directory: '../../RobloxForumGithubImages'
 on:
   schedule:
     # Updates Images Every Minute
@@ -14,8 +14,12 @@ jobs:
     name: 'Generating Images'
     runs-on: 'ubuntu-latest'
     steps:
-      - name: 'Setting things up'
-        run: |
-          node -v
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
+
 
 
