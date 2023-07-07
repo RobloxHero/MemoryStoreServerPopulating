@@ -1,18 +1,26 @@
 name: 'Roblox Forum Github Stats Images'
 run-name: 'Generating Images'
+defaults:
+  run:
+    shell: 'bash'
+    working-directory: '../../RobloxForumGithubImages'
 on:
   workflow_dispatch:
-    
   schedule:
-    - cron:  '*/1 * * * *'
+    # Updates Images Every Minute
+    - cron:  '0 * * * *'
 jobs:
   Generating_Images:
     name: 'Generating Images'
     runs-on: 'ubuntu-latest'
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
+        env: 
+          sername: ${{ github.actor }}
+          Access_Token: ${{ secrets.Roblox_Images_Access_Token }}
       - run: npm install -g bats
       - run: bats -v
 
