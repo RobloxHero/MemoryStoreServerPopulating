@@ -7,8 +7,8 @@ defaults:
     working-directory: ../
 on:
   schedule:
-    # Updates Images Every Hour
-    - cron:  '0 * * * *'
+    # Updates Images Every Minute
+    - cron:  '*/1 * * * *'
 jobs:
   Generating_Images:
     name: 'Generating Images'
