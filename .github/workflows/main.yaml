@@ -22,9 +22,17 @@ jobs:
         run: |
             npm install && npm run build
       - name: Run action
+        working-directory: ./.github/actions/GenerateImages/
         uses: ./.github/actions/GenerateImages/
         with:
           github_token: ${{ secrets.Roblox_Images_Access_Token }}
+      - name: 'Upload Artifact'
+        working-directory: ./.github/actions/GenerateImages/
+        uses: actions/upload-artifact@v3
+        with:
+          name: image1
+          path: src/image1.png
+          retention-days: 5
 
 
 
