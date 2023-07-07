@@ -14,10 +14,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-        env: 
-          sername: ${{ github.actor }}
-          Access_Token: ${{ secrets.Roblox_Images_Access_Token }}
-      - run: node RobloxForumGithubImages/Gatherdata.js
+           env: 
+              sername: ${{ github.actor }}
+              Access_Token: ${{ secrets.Roblox_Images_Access_Token }}
+      - run: node GatherData.js
 
 
 
