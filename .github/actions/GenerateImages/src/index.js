@@ -105,7 +105,7 @@ function createIssueListPng(issues) {
       TodoRectClone.addTo(ListItemGroup).front()
       let TodoTextClone = TodoText.clone()
       TodoTextClone.transform({ translateX: TodoTextTranslateX, translateY: TodoTextTranslateY + ListItemGroupY, scaleX: TodoTextScaleX, scaleY: TodoTextScaleY  })
-      TodoTextClone.addTo(ListItemGroup).front
+      TodoTextClone.addTo(ListItemGroup).front()
   }
   console.log(Canvas.svg())
   fs.writeFileSync('IssuesList.svg', Canvas.svg())     
