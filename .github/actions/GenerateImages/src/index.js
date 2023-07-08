@@ -20,7 +20,6 @@ function createIssueListPng() {
   const canvas = SVG(document.documentElement)
   canvas.rect(100, 100).fill('yellow').move(50,50)
   // var ListBackground = SVG(document.documentElement).link('http://svgdotjs.github.io/').rect(100, 100)
-  console.log(canvas.svg())
   // console.log(ListBackground.svg())
   // var text = ListBackground.text("Title")
   // text.font({
@@ -29,7 +28,7 @@ function createIssueListPng() {
   // })
   // text.fill('#fff').move(20,20)
   // let test = rect.merge(text)
-  // fs.writeFileSync('image1.svg', ListBackground.svg())     
+  fs.writeFileSync('image1.svg', canvas.svg())     
 }
 
 ( async function main() {
