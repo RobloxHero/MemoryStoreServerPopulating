@@ -48,11 +48,11 @@ function createIssueListPng(issues) {
     ListItemGroupY = (ListItemHeight + ListItemTopPadding) * (i==1?0:i-1)
     ListItemGroupClone.addTo(Canvas)
     ListItemGroupClone.link(issues[i].url)
-    ListItemGroupClone.move(ListItemGroupX, ListItemGroupY)
 
     // Copy the List Background and add to List Group
     let ListItemClone = ListItem.clone()
     ListItemClone.addTo(ListItemGroupClone)
+    ListItemGroupClone.move(ListItemGroupX, ListItemGroupY)
 
     // Title = issues[i].title
     // let textClone = text.clone()
