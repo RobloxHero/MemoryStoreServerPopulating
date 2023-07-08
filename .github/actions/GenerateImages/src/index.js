@@ -32,20 +32,20 @@ function createIssueListPng(issues) {
   let CornerRadius = 9.28
   let ListItemTopPadding = 5
 
-  // let CommentTextTranslateX = 302.56
-  // let CommentTextTranslateY = 44.92
-  // let CommentTextScaleX = 1.04
-  // let CommentTextScaleY = 1
+  let CommentTextTranslateX = 302.56
+  let CommentTextTranslateY = 44.92
+  let CommentTextScaleX = 1.04
+  let CommentTextScaleY = 1
  
-  // let TodoTextTranslateX = 15.73
-  // let TodoTextTranslateY = 43.63
-  // let TodoTextScaleX = 1.29
-  // let TodoTextScaleY = 1
+  let TodoTextTranslateX = 15.73
+  let TodoTextTranslateY = 43.63
+  let TodoTextScaleX = 1.29
+  let TodoTextScaleY = 1
   
-  // let WorkingOnItTextTranslateX = 15.73
-  // let WorkingOnItTextTranslateY = 43.63
-  // let WorkingOnItTextScaleX = 1.29
-  // let WorkingOnItTextScaleY = 1
+  let WorkingOnItTextTranslateX = 15.73
+  let WorkingOnItTextTranslateY = 43.63
+  let WorkingOnItTextScaleX = 1.29
+  let WorkingOnItTextScaleY = 1
 
   let ListItem = SVG(`<rect width="${ListItemWidth}" height="${ListItemHeight}" rx="${CornerRadius}" ry="${CornerRadius}" style="fill: #2c2c3d;"/>`)
   let ListItemTitle = SVG(`<text style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 18.78px; font-weight: 700;"></text>`)
@@ -54,11 +54,11 @@ function createIssueListPng(issues) {
     <path id="_-Color" data-name="🎨-Color" d="m284.23,45.42c-1.23,0-2.23-.99-2.23-2.22v-5.98c0-1.22,1-2.22,2.23-2.22h9.53c1.23,0,2.23.99,2.23,2.22v5.98c0,1.22-1,2.22-2.23,2.22h-4.54l-3.29,2.56c-.36.28-.88.2-1.15-.17-.11-.15-.16-.33-.16-.51v-1.88h-.39Zm4.56-.87h5.13c.66,0,1.2-.53,1.2-1.19v-5.42c0-.66-.54-1.19-1.2-1.19h-9.84c-.66,0-1.2.53-1.2,1.19v5.42c0,.66.54,1.19,1.2,1.19h1.42v.49s0,1.95,0,1.95l3.29-2.44Z" style="fill: #7788b2;"/>
   </g>
 </g>`)
-  // let CommentText = SVG(`<text style="fill: #7788b2; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 12.85px; font-weight: 700;"></text>`)
-  // let TodoRect = SVG(`<rect x="9" y="30" width="46" height="18" rx="6.2" ry="6.2" style="fill: #ff7bac;"/>`)
-  // let TodoText = SVG(`<text style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="4.08" y="0">odo</tspan></text>`)
-  // let WorkingOnItRect = SVG(`<rect x="9" y="30" width="109" height="18" rx="6.2" ry="6.2" style="fill: #9cbc6f;"/>`)
-  // let WorkingOnItText = SVG('<text style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0">working on it</tspan></text>')
+  let CommentText = SVG(`<text style="fill: #7788b2; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 12.85px; font-weight: 700;"></text>`)
+  let TodoRect = SVG(`<rect x="9" y="30" width="46" height="18" rx="6.2" ry="6.2" style="fill: #ff7bac;"/>`)
+  let TodoText = SVG(`<text style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="4.08" y="0">odo</tspan></text>`)
+  let WorkingOnItRect = SVG(`<rect x="9" y="30" width="109" height="18" rx="6.2" ry="6.2" style="fill: #9cbc6f;"/>`)
+  let WorkingOnItText = SVG('<text style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0">working on it</tspan></text>')
   
   for (let i=0; i<issues.length; i++ ) {
     // Adjust image height as a list item is added
@@ -87,34 +87,35 @@ function createIssueListPng(issues) {
     CommentIconClone.addTo(ListItemGroup).front()
 
     // Copy the comment count text and add to list group
-    // let CommentTextClone = CommentText.clone()
-    // CommentTextClone.text(issues[i].comments)
-    // CommentTextClone.transform({ translateX: CommentTextTranslateX, translateY: CommentTextTranslateY + ListItemGroupY, scaleX: CommentTextScaleX, scaleY: CommentTextScaleY })
-    // CommentTextClone.addTo(ListItemGroup).front()
+    let CommentTextClone = CommentText.clone()
+    CommentTextClone.text(issues[i].comments)
+    CommentTextClone.transform({ translateX: CommentTextTranslateX, translateY: CommentTextTranslateY + ListItemGroupY, scaleX: CommentTextScaleX, scaleY: CommentTextScaleY })
+    CommentTextClone.addTo(ListItemGroup).front()
 
     if (issues[i].assignee != null) {
-      // let WorkingOnItRectClone = WorkingOnItRect.clone()
-      // WorkingOnItRectClone.transform({ translateY: ListItemGroupY })
-      // WorkingOnItRectClone.addTo(ListItemGroup).front()
-      // let WorkingOnItTextClone = WorkingOnItText.clone()
-      // // WorkingOnItTextClone.transform({ translateX: WorkingOnItTextTranslateX, translateY: WorkingOnItTextTranslateY + ListItemGroupY, scaleX: WorkingOnItTextScaleX, scaleY: WorkingOnItTextScaleY })
-      // WorkingOnItTextClone.addTo(ListItemGroup).front()
+      let WorkingOnItRectClone = WorkingOnItRect.clone()
+      WorkingOnItRectClone.transform({ translateY: ListItemGroupY })
+      WorkingOnItRectClone.addTo(ListItemGroup).front()
+      let WorkingOnItTextClone = WorkingOnItText.clone()
+      WorkingOnItTextClone.transform({ translateX: WorkingOnItTextTranslateX, translateY: WorkingOnItTextTranslateY + ListItemGroupY, scaleX: WorkingOnItTextScaleX, scaleY: WorkingOnItTextScaleY })
+      WorkingOnItTextClone.addTo(ListItemGroup).front()
     } else {
-      // let TodoRectClone = TodoRect.clone()
-      // TodoRectClone.transform({ translateY: ListItemGroupY })
-      // TodoRectClone.addTo(ListItemGroup).front()
-      // let TodoTextClone = TodoText.clone()
-      // // TodoTextClone.transform({ translateX: TodoTextTranslateX, translateY: TodoTextTranslateY + ListItemGroupY, scaleX: TodoTextScaleX, scaleY: TodoTextScaleY  })
-      // TodoTextClone.addTo(ListItemGroup).front()
+      let TodoRectClone = TodoRect.clone()
+      TodoRectClone.transform({ translateY: ListItemGroupY })
+      TodoRectClone.addTo(ListItemGroup).front()
+      let TodoTextClone = TodoText.clone()
+      TodoTextClone.transform({ translateX: TodoTextTranslateX, translateY: TodoTextTranslateY + ListItemGroupY, scaleX: TodoTextScaleX, scaleY: TodoTextScaleY  })
+      TodoTextClone.addTo(ListItemGroup).front()
+    }   
   }
   console.log(Canvas.svg())
-  fs.writeFileSync('IssuesList.svg', Canvas.svg())     
+  fs.writeFileSync('IssuesList.svg', Canvas.svg())  
 }
 
 ( async function main() {
   try{
     const token = getInput( 'github_token' )
-    const octokit = new getOctokit( token );
+    const octokit = new getOctokit( token )
     const repo = context.payload.repository.name
     const owner = context.payload.sender.login
     // console.log(context)
@@ -128,4 +129,4 @@ function createIssueListPng(issues) {
   catch(e){
     setFailed(e);
   }
-} )();
+} )()
