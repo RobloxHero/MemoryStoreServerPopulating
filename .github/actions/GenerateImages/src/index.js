@@ -38,13 +38,13 @@ function createIssueListPng() {
     const octokit = new getOctokit( token );
     const repo = context.payload.repository.name
     const owner = context.payload.sender.login
-    console.log(context)
+    // console.log(context)
     let issues = await octokit.rest.issues.listForRepo({
       owner,
       repo,
     });
     createIssueListPng()
-    console.log(issues)
+    // console.log(issues)
   }
   catch(e){
     setFailed(e);
