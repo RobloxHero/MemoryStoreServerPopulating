@@ -24,8 +24,9 @@ function createIssueListPng(issues) {
   let ListItemTopPadding = 5
   let CommentNumber = 12
   let ListItemTitleText = 'Testing the label for the Issues'
+  let ListItemLink = ''
 
-  let ListItemGroup = SVG().group()
+  let ListItemGroup = SVG().link(ListItemLink)
   let ListItem = SVG(`<rect width="${ListItemWidth}" height="${ListItemHeight}" rx="${CornerRadius}" ry="${CornerRadius}" style="fill: #2c2c3d;"/>`)
   let ListItemTitle = SVG(`<text transform="translate(8.31 20.11) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 18.78px; font-weight: 700;">${ListItemTitleText}</text>`)
   let CommentIcon = SVG(`<g id="_-Product-Icons" data-name="🔍-Product-Icons">
@@ -45,6 +46,7 @@ function createIssueListPng(issues) {
     Canvas.size(CanvasWidth, CanvasHeight)
 
     // Copy the list group svg and move into place
+    ListItemLink = issues[i].link
     let ListItemGroupClone = ListItemGroup.clone()
     ListItemGroupY = (ListItemHeight + ListItemTopPadding) * i
     ListItemGroupClone.addTo(Canvas)
@@ -53,7 +55,6 @@ function createIssueListPng(issues) {
     let ListItemClone = ListItem.clone()
     ListItemClone.addTo(ListItemGroupClone)
     ListItemGroupClone.move(ListItemGroupX, ListItemGroupY)
-    ListItemGroupClone.link(issues[i].url).height(ListItemHeight).width(ListItemWidth)
 
     // Title = issues[i].title
     // let textClone = text.clone()
