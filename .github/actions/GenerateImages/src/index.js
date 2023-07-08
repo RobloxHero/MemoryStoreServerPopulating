@@ -8,7 +8,7 @@ const { SVG, registerWindow, Svg } = require('@svgdotjs/svg.js')
 registerWindow(window, document)
 //
 let ListItem = `
-    
+<text transform="translate(8.31 26.44) scale(.97 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 26.23px; font-weight: 700;"><tspan x="0" y="0" style="letter-spacing: -.02em;">T</tspan><tspan x="14.79" y="0">itle</tspan></text>
 
   `
 
@@ -17,7 +17,8 @@ function createIssueListPng() {
   let ListItemGroup = SVG().group().addTo(canvas)
   let ListItem = SVG('<rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>').addTo(ListItemGroup)
   let Title = 'Testing the label for the reviews'
-  var text = SVG('<text>hello</text>').addTo(ListItemGroup).fill('#fff').size('22px')
+  var text = SVG('<text transform="translate(8.31 26.44) scale(.97 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 26.23px; font-weight: 700;"><tspan x="0" y="0" style="letter-spacing: -.02em;">T</tspan><tspan x="14.79" y="0">itle</tspan></text>')
+  text.addTo(ListItemGroup)
   console.log(canvas.svg())
   fs.writeFileSync('image1.svg', canvas.svg())     
 }
