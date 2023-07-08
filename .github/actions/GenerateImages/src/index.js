@@ -6,11 +6,10 @@ const window = createSVGWindow()
 const document = window.document
 const { SVG, registerWindow, Svg } = require('@svgdotjs/svg.js')
 registerWindow(window, document)
-//
-let ListItem = `
-<text transform="translate(8.31 26.44) scale(.97 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 26.23px; font-weight: 700;"><tspan x="0" y="0" style="letter-spacing: -.02em;">T</tspan><tspan x="14.79" y="0">itle</tspan></text>
 
-  `
+function truncate(count, string) {
+ return string.substr(0, count) + '...'
+}
 
 function createIssueListPng(issues) {
   const Canvas = SVG(document.documentElement)
@@ -59,7 +58,7 @@ function createIssueListPng(issues) {
 
     let ListItemTitleClone = ListItemTitle.clone()
     ListItemTitleClone.transform({ translateX: ListItemTextTranslateX, translateY: ListItemTextTranslateY + ListItemGroupY, scaleX: ListItemTextScaleX, scaleY: ListItemTextScaleY })
-    ListItemTitleClone.text(issues[i].title)
+    ListItemTitleClone.text(truncate(27, issues[i].title))
     ListItemTitleClone.addTo(ListItemGroup).front()
 
     // commentNumber = issues[i].comments
