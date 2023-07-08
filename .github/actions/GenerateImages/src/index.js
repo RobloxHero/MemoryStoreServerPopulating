@@ -52,7 +52,7 @@ function createIssueListPng(issues) {
 
     // Copy the List Background and add to List Group
     let ListItemClone = ListItem.clone()
-    ListItemClone.addTo(ListItemGroup)
+    ListItemClone.addTo(ListItemGroupClone)
 
     // Title = issues[i].title
     // let textClone = text.clone()
