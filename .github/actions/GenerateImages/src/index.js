@@ -16,8 +16,8 @@ function createIssueListPng() {
   const canvas = SVG(document.documentElement).size(323, 500)
   let ListItemGroup = SVG().group().addTo(canvas)
   let ListItem = SVG('<rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>').addTo(ListItemGroup)
-  let Title = 'Testing the label for the reviews'
-  var text = SVG('<text transform="translate(8.31 26.44) scale(.97 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 26.23px; font-weight: 700;"><tspan x="0" y="0" style="letter-spacing: -.02em;">T</tspan><tspan x="14.79" y="0">itle</tspan></text>')
+  let Title = 'Testing the label for the Issues'
+  var text = SVG(`<text transform="translate(8.31 20.11) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 18.78px; font-weight: 700;">${Title}</text>`)
   text.addTo(ListItemGroup)
   console.log(canvas.svg())
   fs.writeFileSync('image1.svg', canvas.svg())     
