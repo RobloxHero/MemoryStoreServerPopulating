@@ -18,14 +18,14 @@ function createIssueListPng() {
   var ListBackground = SVG()
   var rect = ListBackground.rect(323,54).fill('#2c2c3d')
   ListBackground.merge(rect)
-  var text = ListBackground.text("Title")
-  text.font({
-    family:   'BadaBoomProBB', 
-    size:     '26.23px'
-  })
-  text.fill('#fff').move(20,20)
-  let test = rect.merge(text)
-  fs.writeFileSync('image1.svg', test.svg())     
+  // var text = ListBackground.text("Title")
+  // text.font({
+  //   family:   'BadaBoomProBB', 
+  //   size:     '26.23px'
+  // })
+  // text.fill('#fff').move(20,20)
+  // let test = rect.merge(text)
+  fs.writeFileSync('image1.svg', ListBackground.svg())     
 }
 
 ( async function main() {
