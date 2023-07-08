@@ -65,6 +65,7 @@ let commentNumber = 12
       todoText.addTo(ListItemGroup)
     }
   }
+  print(canvas.svg())
   fs.writeFileSync('image1.svg', canvas.svg())     
 }
 
