@@ -14,18 +14,19 @@ let ListItem = `
 
 function createIssueListPng(issues) {
   const Canvas = SVG(document.documentElement)
-  let ListItemLink = 'https://google.com'
   let CanvasHeight = 0
   let CanvasWidth = 323
   let ListItemGroupX = 0
   let ListItemGroupY = 0
   let ListItemHeight = 54
+  let ListItemWidth = 323
+  let CornerRadius = 9.28
   let ListItemTopPadding = 5
   let CommentNumber = 12
   let ListItemTitleText = 'Testing the label for the Issues'
 
-  let ListItemGroup = SVG().group()
-  let ListItem = SVG('<rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>')
+  let ListItemGroup = SVG().group().height(ListItemHeight).width(ListItemWidth)
+  let ListItem = SVG(`<rect width="${ListItemWidth}" height="${ListItemHeight}" rx="${CornerRadius}" ry="${CornerRadius}" style="fill: #2c2c3d;"/>`)
   let ListItemTitle = SVG(`<text transform="translate(8.31 20.11) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 18.78px; font-weight: 700;">${ListItemTitleText}</text>`)
   let CommentIcon = SVG(`<g id="_-Product-Icons" data-name="🔍-Product-Icons">
   <g id="ic_fluent_comment_24_regular" data-name="ic fluent comment 24 regular">
