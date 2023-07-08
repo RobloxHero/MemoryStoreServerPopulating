@@ -18,16 +18,16 @@ let ListItem = `
 
 function createIssueListPng() {
   const canvas = SVG(document.documentElement)
-  canvas.rect(100, 100).fill('yellow').move(50,50)
-  // var ListBackground = SVG(document.documentElement).link('http://svgdotjs.github.io/').rect(100, 100)
-  // console.log(ListBackground.svg())
-  // var text = ListBackground.text("Title")
-  // text.font({
-  //   family:   'BadaBoomProBB', 
-  //   size:     '26.23px'
-  // })
-  // text.fill('#fff').move(20,20)
-  // let test = rect.merge(text)
+  let ListBackground = canvas.link('http://svgdotjs.github.io/')
+  let ListItem = SVG('rect').addTo(ListBackground)
+  ListItem.fill('#2c2c3d').width(323).height(54)
+  var text = ListBackground.text("Title")
+  text.font({
+    family:   'BadaBoomProBB', 
+    size:     '26.23px'
+  })
+  text.fill('#fff').move(20,20)
+  text.addTo(ListItem)
   fs.writeFileSync('image1.svg', canvas.svg())     
 }
 
