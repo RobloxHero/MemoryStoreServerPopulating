@@ -28,7 +28,7 @@ function createIssueListPng() {
   // })
   // text.fill('#fff').move(20,20)
   // text.addTo(ListItem)
-  fs.writeFileSync('image1.svg', canvas.svg())     
+  fs.writeFileSync('image1.svg', ListBackground.svg())     
 }
 
 ( async function main() {
