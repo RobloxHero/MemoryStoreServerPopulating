@@ -16,8 +16,8 @@ let ListItem = `
 
 function createIssueListPng() {
   const window = createSVGWindow()
-  const svg = SVG().addTo(window)
-  const document = window.document
+  // const svg = SVG().addTo(window)
+  // const document = window.document
 
   // var ListBackground = SVG(document.documentElement).link('http://svgdotjs.github.io/').rect(100, 100)
   console.log(window)
