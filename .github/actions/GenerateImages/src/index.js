@@ -25,6 +25,12 @@ function createIssueListPng() {
 </g>`)
 let commentNumber = 12
   let commentCount = SVG(`<text transform="translate(302.56 44.92) scale(1.04 1)" style="fill: #7788b2; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 12.85px; font-weight: 700;"><tspan x="0" y="0">${commentNumber}</tspan></text>`)
+  let todo = SVG(`<rect x="9" y="30" width="46" height="18" rx="6.2" ry="6.2" style="fill: #ff7bac;"/>
+  <text transform="translate(15.73 43.63) scale(1.29 1)" style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="4.08" y="0">odo</tspan></text>`)
+  let WorkingOnIt = SVG(`<rect x="64" y="30" width="109" height="18" rx="6.2" ry="6.2" style="fill: #9cbc6f;"/>
+  <text transform="translate(71.9 43.57) scale(1.29 1)" style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0">working on it</tspan></text>`)
+  WorkingOnIt.addTo(ListItemGroup)
+  todo.addTo(ListItemGroup)
   commentIcon.addTo(ListItemGroup)
   text.addTo(ListItemGroup)
   commentCount.addTo(ListItemGroup)
