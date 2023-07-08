@@ -21,7 +21,7 @@ function createIssueListPng(issues) {
   let yHeight = 54
   let yPadding = 5
   let ListItemGroup = SVG().group().link(link).addTo(canvas)
-  let ListItem = SVG('<rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>')
+  let ListItem = SVG('<rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>').addTo(ListItemGroup)
   let Title = 'Testing the label for the Issues'
   let text = SVG(`<text transform="translate(8.31 20.11) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 18.78px; font-weight: 700;">${Title}</text>`)
   let commentIcon = SVG(`<g id="_-Product-Icons" data-name="🔍-Product-Icons">
