@@ -2,7 +2,7 @@ const { setFailed, getInput, debug } = require( '@actions/core' );
 const { context, getOctokit } = require( '@actions/github' );
 import fs from "fs"
 const { createSVGWindow } = require('svgdom')
-const SVG = require('@svgdotjs/svg.js')
+import { SVG } from '@svgdotjs/svg.js'
 
 //
 let ListItem = `
