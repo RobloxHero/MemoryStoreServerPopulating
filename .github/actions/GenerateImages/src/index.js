@@ -41,6 +41,7 @@ function createIssueListPng(issues) {
   let TodoTextTranslateY = 43.63
   let TodoTextScaleX = 1.29
   let TodoTextScaleY = 1
+  
   let WorkingOnItTextTranslateX = 15.73
   let WorkingOnItTextTranslateY = 43.63
   let WorkingOnItTextScaleX = 1.29
