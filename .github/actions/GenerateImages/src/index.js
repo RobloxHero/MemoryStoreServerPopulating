@@ -7,10 +7,9 @@ import { JSDOM } from "jsdom"
 
 let ListItem = `
     <svg id="Background" xmlns="http://www.w3.org/2000/svg" width="323" height="54" viewBox="0 0 323 54">
-      <g id="Frame">
-        <rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>
-      </g>
-    <text transform="translate(8.31 26.44) scale(.97 1)" style="fill: #fff; font-family: Noto Sans Mono; font-size: 26.23px;">Title</text>
+        <rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;">
+            <text transform="translate(8.31 26.44) scale(.97 1)" style="fill: #fff; font-family: BadaBoomProBB, &apos;BadaBoom Pro BB&apos;; font-size: 26.23px;"><tspan x="0" y="0">Title</tspan></text>
+        </rect>
   </svg>
   `
 
@@ -19,9 +18,9 @@ function createIssueListPng() {
     fitTo: {
       mode: 'width',
       value: 500,
-    }
+    },
   }
-  const resvg = new Resvg(ListItem, opts)
+  const resvg = new Resvg(ListItem)
   const pngData = resvg.render()
   const pngBuffer = pngData.asPng()
   fs.writeFileSync('image1.png', pngBuffer)     
