@@ -18,7 +18,8 @@ function createIssueListPng() {
   let ListItemGroup = SVG().group().addTo(ListBackground)
   let ListItem = SVG('<rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>').addTo(ListItemGroup)
   let Title = 'Testing the label for the reviews'
-  var text = ListItemGroup.text('title')
+  var text = SVG(document.createElementNS('http://www.w3.org/2000/svg', 'text')).addTo(ListItemGroup)
+  text.fill('#fff')
   fs.writeFileSync('image1.svg', ListBackground.svg())     
 }
 
