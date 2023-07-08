@@ -53,7 +53,7 @@ function createIssueListPng(issues) {
     let ListItemClone = ListItem.clone()
     ListItemClone.addTo(ListItemGroupClone)
     ListItemGroupClone.move(ListItemGroupX, ListItemGroupY)
-    ListItemGroupClone.link(issues[i].url)
+    ListItemGroupClone.link(issues[i].url).height(ListItemHeight).width(ListItemWidth)
 
     // Title = issues[i].title
     // let textClone = text.clone()
