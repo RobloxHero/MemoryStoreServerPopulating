@@ -19,7 +19,7 @@ function createIssueListPng() {
   const svg = SVG(window)
   const document = window.document
 
-  var ListBackground = SVG(document.documentElement).link('http://svgdotjs.github.io/').rect(100, 100)
+  // var ListBackground = SVG(document.documentElement).link('http://svgdotjs.github.io/').rect(100, 100)
   console.log(svg)
   // console.log(ListBackground.svg())
   // var text = ListBackground.text("Title")
