@@ -17,7 +17,7 @@ function createIssueListPng(issues) {
   let link = 'https://google.com'
   let movex = 0
   let yMove = 0
-  let yCanvasHeight = 0
+  let yCanvasHeight = 54
   let yHeight = 54
   let yPadding = 5
   let ListItemGroup = SVG().group()
@@ -42,10 +42,13 @@ let commentNumber = 12
   console.log(canvas.svg())
   for (let i=0; i<issues.length; i++ ) {
     let ListItemGroupClone = ListItemGroup.clone()
-    yMove = (yHeight + yPadding) * i
+    
+    // yMove = (yHeight + yPadding) * i
+    // ListItemGroupClone.move(movex, yMove)
+
     yCanvasHeight += yMove
-    ListItemGroupClone.move(movex, yMove)
     canvas.size(323, yCanvasHeight)
+
     ListItemGroupClone.link(issues[i].url).addTo(canvas)
     let ListItemClone = ListItem.clone()
     ListItemClone.addTo(ListItemGroup)
