@@ -40,12 +40,12 @@ function createIssueListPng(issues) {
   
   for (let i=0; i<issues.length; i++ ) {
     // Adjust image height as a list item is added
-    CanvasHeight += ListItemHeight
+    CanvasHeight += ListItemHeight + ListItemTopPadding
     Canvas.size(CanvasWidth, CanvasHeight)
 
     // Copy the list group svg and move into place
     let ListItemGroupClone = ListItemGroup.clone()
-    ListItemGroupY = (ListItemHeight + ListItemTopPadding) * i
+    ListItemGroupY = (ListItemHeight + ListItemTopPadding) * (i==1?0:i-1)
     ListItemGroupClone.addTo(Canvas)
     ListItemGroupClone.link(issues[i].url)
     ListItemGroupClone.move(ListItemGroupX, ListItemGroupY)
