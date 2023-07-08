@@ -97,7 +97,7 @@ function createIssueListPng(issues) {
       WorkingOnItRectClone.transform({ translateY: ListItemGroupY })
       WorkingOnItRectClone.addTo(ListItemGroup).front()
       let WorkingOnItTextClone = WorkingOnItText.clone()
-      WorkingOnItTextClone.transform({ })
+      WorkingOnItTextClone.transform({ translateX: WorkingOnItTextTranslateX, translateY: WorkingOnItTextTranslateY + ListItemGroupY, scaleX: WorkingOnItTextScaleX, scaleY: WorkingOnItTextScaleY })
       WorkingOnItTextClone.addTo(ListItemGroup).front()
     } else {
       let TodoRectClone = TodoRect.clone()
@@ -105,7 +105,7 @@ function createIssueListPng(issues) {
       TodoRectClone.addTo(ListItemGroup).front()
       let TodoTextClone = TodoText.clone()
       TodoTextClone.transform({ translateX: TodoTextTranslateX, translateY: TodoTextTranslateY + ListItemGroupY, scaleX: TodoTextScaleX, scaleY: TodoTextScaleY  })
-      TodoTextClone.addTo(ListItemGroup).fronTodo
+      TodoTextClone.addTo(ListItemGroup).front
   }
   console.log(Canvas.svg())
   fs.writeFileSync('IssuesList.svg', Canvas.svg())     
