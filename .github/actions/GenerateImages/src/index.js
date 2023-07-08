@@ -1,6 +1,7 @@
 const { setFailed, getInput, debug } = require( '@actions/core' );
 const { context, getOctokit } = require( '@actions/github' );
 import fs from "fs"
+import XMLSerializer from 'xmlserializer'
 
 
 //
