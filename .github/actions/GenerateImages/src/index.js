@@ -67,7 +67,7 @@ function createIssueListPng(issues) {
     //   todoText.addTo(ListItemGroup)
     // }
   }
-  print(Canvas.svg())
+  console.log(Canvas.svg())
   // fs.writeFileSync('image1.svg', canvas.svg())     
 }
 
