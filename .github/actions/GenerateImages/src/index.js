@@ -1,8 +1,6 @@
 const { setFailed, getInput, debug } = require( '@actions/core' );
 const { context, getOctokit } = require( '@actions/github' );
 import fs from "fs"
-import { SVG } from '@svgdotjs/svg.js'
-
 
 //
 let ListItem = `
@@ -15,7 +13,12 @@ let ListItem = `
   `
 
 function createIssueListPng() {
-  var ListBackground = SVG('rect').link('http://svgdotjs.github.io/')
+  const { createSVGWindow } = require('svgdom')
+  const window = createSVGWindow()
+  const SVG = require('@svgdotjs/svg.js')(window)
+  const document = window.document
+
+  var ListBackground = SVG(document.documentElement).link('http://svgdotjs.github.io/')
   var Link = ListBackground.rect(100, 100)
   console.log(ListBackground)
   console.log(ListBackground.svg())
