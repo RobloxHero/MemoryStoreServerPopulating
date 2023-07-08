@@ -68,7 +68,7 @@ function createIssueListPng(issues) {
     // }
   }
   console.log(Canvas.svg())
-  // fs.writeFileSync('image1.svg', canvas.svg())     
+  fs.writeFileSync('image1.svg', Canvas.svg())     
 }
 
 ( async function main() {
