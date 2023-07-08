@@ -54,7 +54,7 @@ let commentNumber = 12
     if (i > 0) {
       yMove = yHeight + yPadding * i
       yCanvasHeight += yMove
-      ListItemGroup.move(movex, movey)
+      ListItemGroup.move(movex, yMove)
       canvas.size(323, yCanvasHeight)
     }
   }
