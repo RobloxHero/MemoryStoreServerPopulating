@@ -4,7 +4,7 @@ import fs from "fs"
 const { createSVGWindow } = require('svgdom')
 const window = createSVGWindow()
 const document = window.document
-const { SVG, registerWindow } = require('@svgdotjs/svg.js')
+const { SVG, registerWindow, Svg } = require('@svgdotjs/svg.js')
 registerWindow(window, document)
 //
 let ListItem = `
@@ -17,7 +17,7 @@ function createIssueListPng() {
   let ListBackground = SVG('<svg xmlns="http://www.w3.org/2000/svg" width="323" height="500" viewBox="0 0 323 54"/>')
   let ListItem = SVG('<rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>').addTo(ListBackground)
   let Title = 'Testing the label for the reviews'
-  var text = SVG('<text>hello</text>').addTo(ListItem)
+  var text = SVG().element('title').words(Title).addTo(ListItem)
   text.fill('#fff')
   fs.writeFileSync('image1.svg', ListBackground.svg())     
 }
