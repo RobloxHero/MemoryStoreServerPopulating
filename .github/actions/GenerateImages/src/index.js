@@ -1,9 +1,8 @@
 const { setFailed, getInput, debug } = require( '@actions/core' );
 const { context, getOctokit } = require( '@actions/github' );
-import * as d3 from "d3";
-const { Resvg } = require('@resvg/resvg-js')
 import fs from "fs"
-import { JSDOM } from "jsdom"
+import xmlserializer from 'xmlserializer'
+
 //
 let ListItem = `
 <?xml version="1.0" encoding="UTF-8"?>
@@ -16,8 +15,7 @@ let ListItem = `
   `
 
 function createIssueListPng() {
-
-  fs.writeFileSync('image1.svg', ListItem)     
+  fs.writeFileSync('image1.svg', xmlserializer.serializeToString(ListItem))     
 }
 
 ( async function main() {
