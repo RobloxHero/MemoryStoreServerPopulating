@@ -13,11 +13,11 @@ let ListItem = `
   `
 
 function createIssueListPng() {
-  const canvas = SVG(document.documentElement)
+  const canvas = SVG(document.documentElement).size(323, 500)
   let ListItemGroup = SVG().group().addTo(canvas)
   let ListItem = SVG('<rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>').addTo(ListItemGroup)
   let Title = 'Testing the label for the reviews'
-  var text = SVG('<text>hello</text>').addTo(ListItemGroup)
+  var text = SVG('<text>hello</text>').addTo(ListItemGroup).fill('#fff').size('22px')
   console.log(canvas.svg())
   fs.writeFileSync('image1.svg', canvas.svg())     
 }
