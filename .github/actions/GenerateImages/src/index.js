@@ -1,7 +1,7 @@
 const { setFailed, getInput, debug } = require( '@actions/core' );
 const { context, getOctokit } = require( '@actions/github' );
 import fs from "fs"
-import XMLSerializer from 'xmlserializer'
+import { SVG } from '@svgdotjs/svg.js'
 
 
 //
@@ -15,8 +15,17 @@ let ListItem = `
   `
 
 function createIssueListPng() {
-  console.log(XMLSerializer.serializeToString(ListItem))
-  fs.writeFileSync('image1.svg', serializer.serializeToString(ListItem))     
+  var ListBackground = SVG()
+  var rect = draw.rect(323,54).fill('#2c2c3d')
+  ListBackground.merge(rect)
+  var text = draw.text("Title")
+  text.font({
+    family:   'BadaBoomProBB', 
+    size:     '26.23px'
+  })
+  text.fill('#fff').move(20,20)
+  let test = rect.merge(text)
+  fs.writeFileSync('image1.svg', test.svg())     
 }
 
 ( async function main() {
