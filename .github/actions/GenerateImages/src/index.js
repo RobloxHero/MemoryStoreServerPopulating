@@ -5,8 +5,7 @@ import XMLSerializer from 'xmlserializer'
 
 
 //
-let ListItem = `
-<?xml version="1.0" encoding="UTF-8"?>
+let ListItem = `<?xml version="1.0" encoding="UTF-8"?>
     <svg id="Background" xmlns="http://www.w3.org/2000/svg" width="323" height="54" viewBox="0 0 323 54">
       <g id="Frame">
         <rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>
@@ -16,8 +15,7 @@ let ListItem = `
   `
 
 function createIssueListPng() {
-  var serializer = new XMLSerializer()
-  console.log(serializer.serializeToString(ListItem))
+  console.log(XMLSerializer.serializeToString(ListItem))
   fs.writeFileSync('image1.svg', serializer.serializeToString(ListItem))     
 }
 
