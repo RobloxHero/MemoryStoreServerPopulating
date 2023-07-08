@@ -8,6 +8,9 @@ const { SVG, registerWindow, Svg } = require('@svgdotjs/svg.js')
 registerWindow(window, document)
 
 function truncate(count, string) {
+  if (string.length < count) {
+    return string
+  }
  return string.substr(0, count) + '...'
 }
 
@@ -51,16 +54,20 @@ function createIssueListPng(issues) {
     ListItemGroupY = (ListItemHeight + ListItemTopPadding) * i
     ListItemGroup.addTo(Canvas)
 
-    // Copy the List Background and add to List Group
+    // Copy the list background and add to list group
     let ListItemClone = ListItem.clone()
     ListItemClone.addTo(ListItemGroup)
     ListItemGroup.move(ListItemGroupX, ListItemGroupY)
 
+    // Copy the title and add to list group
     let ListItemTitleClone = ListItemTitle.clone()
     ListItemTitleClone.transform({ translateX: ListItemTextTranslateX, translateY: ListItemTextTranslateY + ListItemGroupY, scaleX: ListItemTextScaleX, scaleY: ListItemTextScaleY })
     ListItemTitleClone.text(truncate(27, issues[i].title))
     ListItemTitleClone.addTo(ListItemGroup).front()
 
+    // Copy the comment icon and add to list group
+    let CommentIconClone = CommentIcon.clone()
+    ListItemTitleClone.transform({ translateY: ListItemTextTranslateY + ListItemGroupY })
     // commentNumber = issues[i].comments
     // if (issues[i].assignee != null) {
     //   WorkingOnItRect.addTo(ListItemGroup)
