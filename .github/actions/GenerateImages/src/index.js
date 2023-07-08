@@ -10,7 +10,7 @@ let ListItem = `
       <g id="Frame">
         <rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>
       </g>
-    <text transform="translate(8.31 26.44) scale(.97 1)" style="fill: #fff; font-family: BadaBoomProBB, &apos;BadaBoom Pro BB&apos;; font-size: 26.23px;"><tspan x="0" y="0">Title</tspan></text>
+    <text transform="translate(8.31 26.44) scale(.97 1)" style="fill: #fff; font-family: RifficFree-Bold; font-size: 26.23px;">Title</text>
   </svg>
   `
 
@@ -20,8 +20,13 @@ function createIssueListPng() {
       mode: 'width',
       value: 500,
     },
+    font: {
+      fontFiles: ['RifficFree-Bold.ttf'],
+      loadSystemFonts: false, // It will be faster to disable loading system fonts.
+      defaultFontFamily: 'RifficFree-Bold',
+    }
   }
-  const resvg = new Resvg(ListItem)
+  const resvg = new Resvg(ListItem, opts)
   const pngData = resvg.render()
   const pngBuffer = pngData.asPng()
   fs.writeFileSync('image1.png', pngBuffer)     
