@@ -97,7 +97,7 @@ function createIssueListPng(issues) {
       WorkingOnItRectClone.transform({ translateY: ListItemGroupY })
       WorkingOnItRectClone.addTo(ListItemGroup).front()
       let WorkingOnItTextClone = WorkingOnItText.clone()
-      WorkingOnItTextClone.transform({ translateX: WorkingOnItTextTranslateX, translateY: WorkingOnItTextTranslateY + ListItemGroupY, scaleX: WorkingOnItTextScaleX, scaleY: WorkingOnItTextScaleY })
+      // WorkingOnItTextClone.transform({ translateX: WorkingOnItTextTranslateX, translateY: WorkingOnItTextTranslateY + ListItemGroupY, scaleX: WorkingOnItTextScaleX, scaleY: WorkingOnItTextScaleY })
       WorkingOnItTextClone.addTo(ListItemGroup).front()
     } else {
       let TodoRectClone = TodoRect.clone()
