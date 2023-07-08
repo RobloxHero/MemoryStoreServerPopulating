@@ -50,9 +50,10 @@ function createIssueListPng(issues) {
     ListItemGroupClone.addTo(Canvas)
 
     // Copy the List Background and add to List Group
-    let ListItemClone = ListItem.clone().link(issues[i].url)
+    let ListItemClone = ListItem.clone()
     ListItemClone.addTo(ListItemGroupClone)
     ListItemGroupClone.move(ListItemGroupX, ListItemGroupY)
+    ListItemGroupClone.link(issues[i].url)
 
     // Title = issues[i].title
     // let textClone = text.clone()
