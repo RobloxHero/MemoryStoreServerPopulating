@@ -15,7 +15,7 @@ let ListItem = `
   `
 
 function createIssueListPng() {
-  var ListBackground = SVG().link('http://svgdotjs.github.io/')
+  var ListBackground = SVG('rect').link('http://svgdotjs.github.io/')
   var Link = ListBackground.rect(100, 100)
   console.log(ListBackground)
   console.log(ListBackground.svg())
