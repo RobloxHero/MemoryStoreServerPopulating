@@ -19,7 +19,7 @@ let ListItem = `
 function createIssueListPng() {
   const canvas = SVG(document.documentElement)
   let ListBackground = canvas.link('http://svgdotjs.github.io/')
-  let ListItem = SVG('rect').addTo(ListBackground)
+  let ListItem = canvas('rect').addTo(ListBackground)
   ListItem.fill('#2c2c3d').width(323).height(54)
   // var text = ListBackground.text("Title")
   // text.font({
