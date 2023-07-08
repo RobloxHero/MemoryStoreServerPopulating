@@ -42,6 +42,10 @@ let commentNumber = 12
   console.log(canvas.svg())
   for (let i=0; i<issues.length; i++ ) {
     let ListItemGroupClone = ListItemGroup.clone()
+    yMove = (yHeight + yPadding) * i
+    yCanvasHeight += yMove
+    ListItemGroupClone.move(movex, yMove)
+    canvas.size(323, yCanvasHeight)
     ListItemGroupClone.link(issues[i].url).addTo(canvas)
     let ListItemClone = ListItem.clone()
     ListItemClone.addTo(ListItemGroup)
@@ -56,12 +60,6 @@ let commentNumber = 12
     } else {
       todoRect.addTo(ListItemGroup)
       todoText.addTo(ListItemGroup)
-    }
-    if (i > 0) {
-      yMove = yHeight + yPadding * i
-      yCanvasHeight += yMove
-      ListItemGroup.move(movex, yMove)
-      canvas.size(323, yCanvasHeight)
     }
   }
   fs.writeFileSync('image1.svg', canvas.svg())     
