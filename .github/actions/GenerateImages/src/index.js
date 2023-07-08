@@ -67,7 +67,9 @@ function createIssueListPng(issues) {
 
     // Copy the comment icon and add to list group
     let CommentIconClone = CommentIcon.clone()
-    ListItemTitleClone.transform({ translateY: ListItemTextTranslateY + ListItemGroupY })
+    CommentIconClone.transform({ translateY: ListItemTextTranslateY + ListItemGroupY })
+    CommentIconClone.addTo(ListItemGroup).front()
+
     // commentNumber = issues[i].comments
     // if (issues[i].assignee != null) {
     //   WorkingOnItRect.addTo(ListItemGroup)
