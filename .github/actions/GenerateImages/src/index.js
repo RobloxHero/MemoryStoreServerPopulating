@@ -1,7 +1,7 @@
 const { setFailed, getInput, debug } = require( '@actions/core' );
 const { context, getOctokit } = require( '@actions/github' );
 import fs from "fs"
-import xmlserializer from 'xmlserializer'
+
 
 //
 let ListItem = `
@@ -15,7 +15,9 @@ let ListItem = `
   `
 
 function createIssueListPng() {
-  fs.writeFileSync('image1.svg', xmlserializer.serializeToString(ListItem))     
+  var serializer = new XMLSerializer()
+  console.log(serializer.serializeToString(ListItem))
+  fs.writeFileSync('image1.svg', serializer.serializeToString(ListItem))     
 }
 
 ( async function main() {
