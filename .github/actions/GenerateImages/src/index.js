@@ -55,8 +55,7 @@ function createIssueListPng(issues) {
 
     ListItemTitleText = issues[i].title
     let ListItemTitleClone = ListItemTitle.clone()
-    ListItemTitleClone.addTo(ListItemGroup)
-    ListItemClone.after(ListItemTitleClone)
+    ListItemTitleClone.addTo(ListItemGroup).front()
 
     // commentNumber = issues[i].comments
     // if (issues[i].assignee != null) {
