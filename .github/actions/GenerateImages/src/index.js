@@ -2,8 +2,10 @@ const { setFailed, getInput, debug } = require( '@actions/core' );
 const { context, getOctokit } = require( '@actions/github' );
 import fs from "fs"
 const { createSVGWindow } = require('svgdom')
-import { SVG, extend as SVGextend, Element as SVGElement } from '@svgdotjs/svg.js'
-
+const window = createSVGWindow()
+const document = window.document
+const { SVG, registerWindow } = require('@svgdotjs/svg.js')
+registerWindow(window, document)
 //
 let ListItem = `
     <svg id="Background" xmlns="http://www.w3.org/2000/svg" width="323" height="54" viewBox="0 0 323 54">
@@ -15,12 +17,10 @@ let ListItem = `
   `
 
 function createIssueListPng() {
-  const window = createSVGWindow()
-  // const svg = SVG().addTo(window)
-  // const document = window.document
-
+  const canvas = SVG(document.documentElement)
+  canvas.rect(100, 100).fill('yellow').move(50,50)
   // var ListBackground = SVG(document.documentElement).link('http://svgdotjs.github.io/').rect(100, 100)
-  console.log(window)
+  console.log(canvas.svg())
   // console.log(ListBackground.svg())
   // var text = ListBackground.text("Title")
   // text.font({
