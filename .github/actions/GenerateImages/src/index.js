@@ -47,11 +47,10 @@ function createIssueListPng(issues) {
     // Copy the list group svg and move into place
     let ListItemGroupClone = ListItemGroup.clone()
     ListItemGroupY = (ListItemHeight + ListItemTopPadding) * i
-    ListItemGroupClone.link(issues[i].url)
     ListItemGroupClone.addTo(Canvas)
 
     // Copy the List Background and add to List Group
-    let ListItemClone = ListItem.clone()
+    let ListItemClone = ListItem.clone().link(issues[i].url)
     ListItemClone.addTo(ListItemGroupClone)
     ListItemGroupClone.move(ListItemGroupX, ListItemGroupY)
 
