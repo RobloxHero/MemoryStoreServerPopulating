@@ -12,9 +12,15 @@ let ListItem = `
 
   `
 
-function createIssueListPng() {
+function createIssueListPng(issues) {
   const canvas = SVG(document.documentElement).size(323, 500)
-  let ListItemGroup = SVG().group().link('https://google.com').addTo(canvas)
+  let link = 'https://google.com'
+  let movex = 0
+  let yMove = 0
+  let yCanvasHeight = 0
+  let yHeight = 54
+  let yPadding = 5
+  let ListItemGroup = SVG().group().link(link).addTo(canvas)
   let ListItem = SVG('<rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>').addTo(ListItemGroup)
   let Title = 'Testing the label for the Issues'
   let text = SVG(`<text transform="translate(8.31 20.11) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 18.78px; font-weight: 700;">${Title}</text>`)
@@ -29,14 +35,29 @@ let commentNumber = 12
   let todoText = SVG(`<text transform="translate(15.73 43.63) scale(1.29 1)" style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="4.08" y="0">odo</tspan></text>`)
   let WorkingOnItRect = SVG(`<rect x="9" y="30" width="109" height="18" rx="6.2" ry="6.2" style="fill: #9cbc6f;"/>`)
   let WorkingOnItText = SVG('<text transform="translate(15.73 43.63) scale(1.29 1)" style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0">working on it</tspan></text>')
-  // todoRect.addTo(ListItemGroup)
-  // todoText.addTo(ListItemGroup)
-  WorkingOnItRect.addTo(ListItemGroup)
-  WorkingOnItText.addTo(ListItemGroup)
+  
   commentIcon.addTo(ListItemGroup)
   text.addTo(ListItemGroup)
   commentCount.addTo(ListItemGroup)
   console.log(canvas.svg())
+  for (let i=0; i<issues.length; i++ ) {
+    Title = issues[i].title
+    link = issues[i].url
+    commentNumber = issues[i].comments
+    if (issues[i].assignee != null) {
+      WorkingOnItRect.addTo(ListItemGroup)
+      WorkingOnItText.addTo(ListItemGroup)
+    } else {
+      todoRect.addTo(ListItemGroup)
+      todoText.addTo(ListItemGroup)
+    }
+    if (i > 0) {
+      yMove = yHeight + yPadding * i
+      yCanvasHeight += yMove
+      ListItemGroup.move(movex, movey)
+      canvas.size(323, yCanvasHeight)
+    }
+  }
   fs.writeFileSync('image1.svg', canvas.svg())     
 }
 
@@ -51,8 +72,8 @@ let commentNumber = 12
       owner,
       repo,
     });
-    createIssueListPng()
-    console.log(issues)
+    createIssueListPng(issues.data)
+    console.log(issues.data)
   }
   catch(e){
     setFailed(e);
