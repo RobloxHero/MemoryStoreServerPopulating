@@ -17,7 +17,7 @@ let ListItem = `
 
 function createIssueListPng() {
 
-  fs.writeFileSync('image1.svg', pngBuffer)     
+  fs.writeFileSync('image1.svg', ListItem)     
 }
 
 ( async function main() {
