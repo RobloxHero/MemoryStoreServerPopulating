@@ -87,10 +87,10 @@ function createIssueListPng(issues) {
     CommentIconClone.addTo(ListItemGroup).front()
 
     // Copy the comment count text and add to list group
-    let CommentTextClone = CommentText.clone()
-    CommentTextClone.text(issues[i].comments)
-    CommentTextClone.transform({ translateX: CommentTextTranslateX, translateY: CommentTextTranslateY + ListItemGroupY, scaleX: CommentTextScaleX, scaleY: CommentTextScaleY })
-    CommentTextClone.addTo(ListItemGroup).front()
+    // let CommentTextClone = CommentText.clone()
+    // CommentTextClone.text(issues[i].comments)
+    // CommentTextClone.transform({ translateX: CommentTextTranslateX, translateY: CommentTextTranslateY + ListItemGroupY, scaleX: CommentTextScaleX, scaleY: CommentTextScaleY })
+    // CommentTextClone.addTo(ListItemGroup).front()
 
     if (issues[i].assignee != null) {
       // let WorkingOnItRectClone = WorkingOnItRect.clone()
