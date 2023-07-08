@@ -32,20 +32,20 @@ function createIssueListPng(issues) {
   let CornerRadius = 9.28
   let ListItemTopPadding = 5
 
-  let CommentTextTranslateX = 302.56
-  let CommentTextTranslateY = 44.92
-  let CommentTextScaleX = 1.04
-  let CommentTextScaleY = 1
+  // let CommentTextTranslateX = 302.56
+  // let CommentTextTranslateY = 44.92
+  // let CommentTextScaleX = 1.04
+  // let CommentTextScaleY = 1
  
-  let TodoTextTranslateX = 15.73
-  let TodoTextTranslateY = 43.63
-  let TodoTextScaleX = 1.29
-  let TodoTextScaleY = 1
+  // let TodoTextTranslateX = 15.73
+  // let TodoTextTranslateY = 43.63
+  // let TodoTextScaleX = 1.29
+  // let TodoTextScaleY = 1
   
-  let WorkingOnItTextTranslateX = 15.73
-  let WorkingOnItTextTranslateY = 43.63
-  let WorkingOnItTextScaleX = 1.29
-  let WorkingOnItTextScaleY = 1
+  // let WorkingOnItTextTranslateX = 15.73
+  // let WorkingOnItTextTranslateY = 43.63
+  // let WorkingOnItTextScaleX = 1.29
+  // let WorkingOnItTextScaleY = 1
 
   let ListItem = SVG(`<rect width="${ListItemWidth}" height="${ListItemHeight}" rx="${CornerRadius}" ry="${CornerRadius}" style="fill: #2c2c3d;"/>`)
   let ListItemTitle = SVG(`<text style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 18.78px; font-weight: 700;"></text>`)
