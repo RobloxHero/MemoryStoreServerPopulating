@@ -35,7 +35,7 @@ function createIssueListPng() {
       repo,
     });
     createIssueListPng()
-    // console.log(issues)
+    console.log(issues)
   }
   catch(e){
     setFailed(e);
