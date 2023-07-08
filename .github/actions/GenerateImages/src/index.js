@@ -15,9 +15,10 @@ let ListItem = `
   `
 
 function createIssueListPng() {
-  var ListBackground = SVG()
-  var rect = ListBackground.rect(323,54).fill('#2c2c3d')
-  ListBackground.merge(rect)
+  var ListBackground = SVG().link('http://svgdotjs.github.io/')
+  var Link = ListBackground.rect(100, 100)
+  console.log(ListBackground)
+  console.log(ListBackground.svg())
   // var text = ListBackground.text("Title")
   // text.font({
   //   family:   'BadaBoomProBB', 
@@ -25,7 +26,7 @@ function createIssueListPng() {
   // })
   // text.fill('#fff').move(20,20)
   // let test = rect.merge(text)
-  fs.writeFileSync('image1.svg', ListBackground.svg())     
+  // fs.writeFileSync('image1.svg', ListBackground.svg())     
 }
 
 ( async function main() {
