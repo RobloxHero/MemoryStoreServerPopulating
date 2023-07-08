@@ -36,6 +36,15 @@ function createIssueListPng(issues) {
   let CommentTextTranslateY = 44.92
   let CommentTextScaleX = 1.04
   let CommentTextScaleY = 1
+ 
+  let TodoTextTranslateX = 15.73
+  let TodoTextTranslateY = 43.63
+  let TodoTextScaleX = 1.29
+  let TodoTextScaleY = 1
+  let WorkingOnItTextTranslateX = 15.73
+  let WorkingOnItTextTranslateY = 43.63
+  let WorkingOnItTextScaleX = 1.29
+  let WorkingOnItTextScaleY = 1
 
   let ListItem = SVG(`<rect width="${ListItemWidth}" height="${ListItemHeight}" rx="${CornerRadius}" ry="${CornerRadius}" style="fill: #2c2c3d;"/>`)
   let ListItemTitle = SVG(`<text style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 18.78px; font-weight: 700;"></text>`)
@@ -46,9 +55,9 @@ function createIssueListPng(issues) {
 </g>`)
   let CommentText = SVG(`<text style="fill: #7788b2; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 12.85px; font-weight: 700;"></text>`)
   let TodoRect = SVG(`<rect x="9" y="30" width="46" height="18" rx="6.2" ry="6.2" style="fill: #ff7bac;"/>`)
-  let TodoText = SVG(`<text transform="translate(15.73 43.63) scale(1.29 1)" style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="4.08" y="0">odo</tspan></text>`)
+  let TodoText = SVG(`<text style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="4.08" y="0">odo</tspan></text>`)
   let WorkingOnItRect = SVG(`<rect x="9" y="30" width="109" height="18" rx="6.2" ry="6.2" style="fill: #9cbc6f;"/>`)
-  let WorkingOnItText = SVG('<text transform="translate(15.73 43.63) scale(1.29 1)" style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0">working on it</tspan></text>')
+  let WorkingOnItText = SVG('<text style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0">working on it</tspan></text>')
   
   for (let i=0; i<issues.length; i++ ) {
     // Adjust image height as a list item is added
@@ -87,16 +96,15 @@ function createIssueListPng(issues) {
       WorkingOnItRectClone.transform({ translateY: ListItemGroupY })
       WorkingOnItRectClone.addTo(ListItemGroup).front()
       let WorkingOnItTextClone = WorkingOnItText.clone()
-      WorkingOnItTextClone.transform({ translateY: ListItemGroupY })
+      WorkingOnItTextClone.transform({ translateX: WorkingOnItTextTranslateX, translateY: WorkingOnItTextTranslateY + ListItemGroupY, scaleX: WorkingOnItTextScaleX, scaleY: WorkingOnItTextScaleY })
       WorkingOnItTextClone.addTo(ListItemGroup).front()
     } else {
       let TodoRectClone = TodoRect.clone()
       TodoRectClone.transform({ translateY: ListItemGroupY })
       TodoRectClone.addTo(ListItemGroup).front()
       let TodoTextClone = TodoText.clone()
-      TodoTextClone.transform({ translateY: ListItemGroupY })
-      TodoTextClone.addTo(ListItemGroup).front()
-    }
+      TodoTextClone.transform({ translateX: TodoTextTranslateX, translateY: TodoTextTranslateY + ListItemGroupY, scaleX: TodoTextScaleX, scaleY: TodoTextScaleY  })
+      TodoTextClone.addTo(ListItemGroup).fronTodo
   }
   console.log(Canvas.svg())
   fs.writeFileSync('IssuesList.svg', Canvas.svg())     
