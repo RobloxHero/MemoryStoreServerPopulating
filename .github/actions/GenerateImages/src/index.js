@@ -8,7 +8,7 @@ const { SVG, registerWindow } = require('@svgdotjs/svg.js')
 registerWindow(window, document)
 //
 let ListItem = `
-    <svg id="Background" xmlns="http://www.w3.org/2000/svg" width="323" height="54" viewBox="0 0 323 54">
+    
       <g id="Frame">
         
       </g>
@@ -18,7 +18,7 @@ let ListItem = `
 
 function createIssueListPng() {
   const canvas = SVG(document.documentElement)
-  let ListBackground = canvas.link('http://svgdotjs.github.io/')
+  let ListBackground = SVG('<svg xmlns="http://www.w3.org/2000/svg" width="323" height="500" viewBox="0 0 323 54">')
   let ListItem = SVG('<rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>').addTo(ListBackground)
   ListItem.fill('#2c2c3d').width(323).height(54)
   // var text = ListBackground.text("Title")
