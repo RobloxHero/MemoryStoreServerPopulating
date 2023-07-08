@@ -41,7 +41,7 @@ function createIssueListPng(issues) {
   let TodoTextTranslateY = 43.63
   let TodoTextScaleX = 1.29
   let TodoTextScaleY = 1
-  
+
   let WorkingOnItTextTranslateX = 15.73
   let WorkingOnItTextTranslateY = 43.63
   let WorkingOnItTextScaleX = 1.29
@@ -89,7 +89,7 @@ function createIssueListPng(issues) {
     // Copy the comment count text and add to list group
     let CommentTextClone = CommentText.clone()
     CommentTextClone.text(issues[i].comments)
-    CommentTextClone.transform({ translateX: CommentTextTranslateX, translateY: CommentTextTranslateY + ListItemGroupY, scaleX: CommentTextScaleX, scaleY: CommentTextScaleY })
+    CommentTextClone.transform()
     CommentTextClone.addTo(ListItemGroup).front()
 
     if (issues[i].assignee != null) {
