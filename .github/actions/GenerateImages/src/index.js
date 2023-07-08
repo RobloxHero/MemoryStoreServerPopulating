@@ -17,7 +17,7 @@ function createIssueListPng() {
   let ListBackground = SVG('<svg xmlns="http://www.w3.org/2000/svg" width="323" height="500" viewBox="0 0 323 54"/>')
   let ListItem = SVG('<rect width="323" height="54" rx="9.28" ry="9.28" style="fill: #2c2c3d;"/>').addTo(ListBackground)
   let Title = 'Testing the label for the reviews'
-  let text = SVG(`<text transform="translate(8.31 26.44) scale(.97 1)" style="fill: #fff; font-family: BadaBoomProBB; font-size: 26.23px;"><tspan x="0" y="0">${Title}</tspan></text>`)
+  let text = SVG('<text transform="translate(8.31 26.44) scale(.97 1)" style="fill: #fff; font-family: BadaBoomProBB; font-size: 26.23px;"/>')
   text.addTo(ListItem)
   fs.writeFileSync('image1.svg', ListBackground.svg())     
 }
