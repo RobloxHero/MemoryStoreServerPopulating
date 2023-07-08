@@ -16,9 +16,9 @@ let ListItem = `
 
 function createIssueListPng() {
   var ListBackground = SVG()
-  var rect = draw.rect(323,54).fill('#2c2c3d')
+  var rect = ListBackground.rect(323,54).fill('#2c2c3d')
   ListBackground.merge(rect)
-  var text = draw.text("Title")
+  var text = ListBackground.text("Title")
   text.font({
     family:   'BadaBoomProBB', 
     size:     '26.23px'
