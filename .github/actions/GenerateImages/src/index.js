@@ -146,7 +146,7 @@ function createProfile() {
   </g>
   <text transform="translate(15.97 97.03) scale(.97 1)" style="fill: #c7b299; font-family: Roboto-Black, Roboto; font-size: 19.52px; font-weight: 800;"><tspan x="0" y="0">Miles</tspan><tspan x="48.47" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="54.89" y="0">ones</tspan></text>
 </svg>`).link('https://github.com/RobloxHero/MemoryStoreServerPopulating').addTo(Canvas)
-console.log(Canvas)
+console.log(Canvas.svg())
 
 }
 
