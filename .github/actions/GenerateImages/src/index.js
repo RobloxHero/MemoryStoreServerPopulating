@@ -190,7 +190,7 @@ for(let i=0; i<milestones.length; i++) {
     ListItemClone.move(0, ((ListHeight + ListPadding) * i))
     ListItemClone.addTo(ProfileGroup).first()
   } else {
-    VersionProgress.findOne('#VersionLabel').text(milestones[i].title)
+    VersionProgress.findOne('#VersionLabel').text(milestones[i].title).center('50%', 0)
     // VersionProgress.findOne('#VersionProgress').move(9,300)
     // VersionProgress.findOne('#ProgressBar').move(0,0)
     // VersionProgress.findOne('#ProgressBarIcon').move(0,0)
