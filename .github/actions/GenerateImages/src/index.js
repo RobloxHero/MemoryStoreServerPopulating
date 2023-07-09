@@ -120,7 +120,7 @@ function createProfile() {
   const document = window.document
   registerWindow(window, document)
   const Canvas = SVG(document.documentElement)
-  
+
   let ProfileBackground = SVG(`<svg id="Dashboard" xmlns="http://www.w3.org/2000/svg" width="690" height="555" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 690 555">
   <defs>
     <radialGradient id="radial-gradient" cx="136.68" cy="337.94" fx="136.68" fy="337.94" r="21.97" gradientUnits="userSpaceOnUse">
@@ -151,7 +151,7 @@ function createProfile() {
   <text transform="translate(15.97 97.03) scale(.97 1)" style="fill: #c7b299; font-family: Roboto-Black, Roboto; font-size: 19.52px; font-weight: 800;"><tspan x="0" y="0">Miles</tspan><tspan x="48.47" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="54.89" y="0">ones</tspan></text>
 </svg>`)  
 // .link('https://github.com/RobloxHero/MemoryStoreServerPopulating').addTo(Canvas)
-console.log(document.documentElement)
+console.log(Canvas.svg())
 
 }
 
