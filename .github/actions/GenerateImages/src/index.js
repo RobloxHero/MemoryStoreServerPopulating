@@ -175,8 +175,11 @@ let VersionProgress = SVG(`<g id="VersionProgress">
 <text id="VersionLabel" text-anchor="middle" x="45%" transform="translate(0 412.59) scale(1.14 1)" style="fill: #fffe2e; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 35.04px; font-weight: 700;">Version 1</text>
 </g>`)
 let RepoTitle = SVG(`<text transform="translate(82.71 41.94) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 21.93px; font-weight: 700;">Test</text>`)
-RepoTitle.text("test")
+RepoTitle.text(repo.name)
 RepoTitle.addTo(ProfileGroup).first()
+let StarsLabel = SVG(`<text transform="translate(621.88 46.34) scale(1.11 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 31.76px; font-weight: 700;"><tspan x="0" y="0">45</tspan></text>`)
+StarsLabel.text(stargazers_count)
+StarsLabel.addTo(ProfileGroup).first()
 let ListHeight = 64
 let ListPadding = 5
 let ProgressBarWidth = 209
