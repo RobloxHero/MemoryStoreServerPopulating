@@ -158,9 +158,10 @@ let ListItem = SVG(`<g id="MilestoneList">
 <g id="ProgressBar">
   <rect id="ProgressBarIcon" x="19" y="154" width="209" height="6" style="fill: #39b54a;" rx="2" ry="2"/>
   </g>
-<text id="CompleteLabel" transform="translate(158.36 145) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;">100% Complete</text>
-<text id="IssuesCountLabel" transform="translate(17.79 145) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;"> 1 open 2 closed</text>
+<text id="CompleteLabel" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;">100% Complete</text>
+<text id="IssuesCountLabel" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;"> 1 open 2 closed</text>
 </g>`)
+
 ListItem.findOne('#Title').text('Hello Testing')
 console.log(ListItem)
 ListItem.addTo(ProfileGroup).first()
