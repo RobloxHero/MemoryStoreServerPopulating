@@ -1,9 +1,13 @@
 name: 'Roblox Forum Github Stats Images'
 on:
   workflow_dispatch:
-  schedule:
-    # Updates Images Every Minute
-    - cron:  '0 * * * *'
+  label:
+    types:
+      - created
+      - labeled
+  push:
+    branches:
+      - '*'
 jobs:
   SettingUpEnviroment:
     name: 'Setting Up The Enviroment'
