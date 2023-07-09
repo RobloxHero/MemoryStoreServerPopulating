@@ -154,7 +154,7 @@ function createProfile() {
 ProfileBackground.addTo(ProfileGroup).first()
 let ListItem = SVG(`<g id="MilestoneList">
 <rect id="ListBackground" x="9" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"/>
-<text class="Title" transform="translate(16.42 15.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 14.28px; font-weight: 700;"></text>
+<text id="Title" transform="translate(16.42 15.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 14.28px; font-weight: 700;"></text>
 <g id="ProgressBar">
   <path id="ProgressBarBack" d="m21.56,51.04h203.88c1.76,0,3.2,1.43,3.2,3.2h0c0,1.89-1.53,3.42-3.42,3.42H21.67c-1.51,0-2.74-1.23-2.74-2.74v-1.23c0-1.46,1.18-2.64,2.64-2.64Z" style="fill: #527f55; opacity: .42;"/>
   <path id="ProgressBarStatus" d="m22.1,51.04h41.95v6.61H22.37c-1.9,0-3.44-1.54-3.44-3.44h0c0-1.75,1.42-3.17,3.17-3.17Z" style="fill: #39b54a;"/>
@@ -162,7 +162,7 @@ let ListItem = SVG(`<g id="MilestoneList">
 <text id="CompleteLabel" transform="translate(158.36 45.34) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;"></text>
 <text id="IssuesCountLabel" transform="translate(17.79 44.85) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;"></text>
 </g>`)
-// ListItem.findOne('#MilestoneList').text('Hello Testing')
+ListItem.findOne('#Title').text('Hello Testing')
 console.log(ListItem)
 ListItem.addTo(ProfileGroup).first()
 console.log(Canvas.svg())
