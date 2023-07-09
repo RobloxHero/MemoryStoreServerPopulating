@@ -163,8 +163,8 @@ let ListItem = SVG(`<g id="MilestoneList">
 </g>`)
 let ListHeight = 64
 let ListPadding = 5
-console.log(milestones[i].title)
 for(let i=0; i<milestones.length; i++) {
+  console.log(milestones[i].title)
   let ListItemClone = ListItem.clone()
   ListItemClone.findOne('#Title').text("test")
   ListItemClone.move(0, ((ListHeight + ListPadding) * i))
