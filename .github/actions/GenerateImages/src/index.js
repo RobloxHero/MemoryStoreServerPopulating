@@ -112,7 +112,7 @@ function createIssueListPng(issues) {
   fs.writeFileSync('IssuesList.svg', Canvas.svg())  
 
   // Export to PNG
-  
+
 }
 
 function createProfile() {
@@ -162,6 +162,7 @@ console.log(Canvas)
       repo,
     });
     createIssueListPng(issues.data)
+    createProfile()
   }
   catch(e){
     setFailed(e);
