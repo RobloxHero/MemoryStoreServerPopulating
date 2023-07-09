@@ -161,13 +161,12 @@ let ListItem = SVG(`<g id="MilestoneList">
 <text id="CompleteLabel" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;">100% Complete</text>
 <text id="IssuesCountLabel" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;"> 1 open 2 closed</text>
 </g>`)
-let ListHeight = ListItem.findOne('#ListBackground').height()
-let ListX = ListItem.findOne('#ListBackground').x()
+let ListHeight = 64
 let ListPadding = 5
 for(let i=0; i<milestones.length; i++) {
   let ListItemClone = ListItem.clone()
   ListItemClone.findOne('#Title')
-  ListItemClone.move(ListX, (ListHeight + ListPadding * i))
+  ListItemClone.move(0, (ListHeight + ListPadding * i))
   ListItemClone.addTo(ProfileGroup).first()
 }
 
