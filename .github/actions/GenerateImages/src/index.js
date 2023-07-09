@@ -174,12 +174,15 @@ let VersionProgress = SVG(`<g id="VersionProgress">
 </g>
 <text id="VersionLabel" text-anchor="middle" x="45%" transform="translate(0 412.59) scale(1.14 1)" style="fill: #fffe2e; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 35.04px; font-weight: 700;">Version 1</text>
 </g>`)
+let RepoTitle = SVG(`<text transform="translate(82.71 41.94) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 21.93px; font-weight: 700;">Test</text>`)
+RepoTitle.text("test")
+RepoTitle.addTo(ProfileGroup).first()
 let ListHeight = 64
 let ListPadding = 5
 let ProgressBarWidth = 209
 let count = 0
 for(let i=0; i<milestones.length; i++) {
-  if (!milestones[i].title.includes("Game Server MSSP Module")) {
+  if (!milestones[i].title.includes("Version")) {
     console.log(milestones[i].title)
     let TotalIssues = parseInt(milestones[i].closed_issues) + parseInt(milestones[i].open_issues)
     let IssuesCompleted = parseInt(milestones[i].closed_issues)
@@ -193,14 +196,11 @@ for(let i=0; i<milestones.length; i++) {
     count++
   } else {
     VersionProgress.findOne('#VersionLabel').text(milestones[i].title)
-    // VersionProgress.findOne('#VersionProgress').move(9,300)
-    // VersionProgress.findOne('#ProgressBar').move(0,0)
-    // VersionProgress.findOne('#ProgressBarIcon').move(0,0)
     VersionProgress.addTo(ProfileGroup).first()
   }
 }
 
-console.log(milestones)
+console.log(repo)
 
 console.log(Canvas.svg())
 fs.writeFileSync('Profile.svg', Canvas.svg())
