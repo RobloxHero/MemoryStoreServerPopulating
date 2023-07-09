@@ -167,19 +167,35 @@ let ListItem = SVG(`<g id="MilestoneList">
 <text id="CompleteLabel" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;">100% Complete</text>
 <text id="IssuesCountLabel" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;"> 1 open 2 closed</text>
 </g>`)
+let VersionProgress = SVG(`<g id="VersionProgress">
+<g id="ProgressBar">
+  <rect width="646" height="30" rx="8.84" ry="8.84" style="fill: #527f55; opacity: .42;"/>
+  <rect id="ProgressBarIcon" width="400" height="30" rx="8.84" ry="8.84" style="fill: #39b54a;"/>
+</g>
+<text id="VersionLabel" transform="scale(1.14 1)" style="fill: #fffe2e; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 35.04px; font-weight: 700;">Version 1.0</text>
+</g>`)
 let ListHeight = 64
 let ListPadding = 5
 let ProgressBarWidth = 209
 for(let i=0; i<milestones.length; i++) {
-  let TotalIssues = parseInt(milestones[i].closed_issues) + parseInt(milestones[i].open_issues)
-  let IssuesCompleted = parseInt(milestones[i].closed_issues)
-  ListItem.findOne('#Title').text(milestones[i].title)
-  ListItem.findOne('#ProgressBarIcon').width( percent(TotalIssues, IssuesCompleted)  *  ProgressBarWidth)
-  ListItem.findOne('#CompleteLabel').text( (percent(TotalIssues, IssuesCompleted) * 100) + "% completed")
-  ListItem.findOne('#IssuesCountLabel').text(milestones[i].open_issues + " open "+ milestones[i].closed_issues+" closed")
-  let ListItemClone = ListItem.clone()
-  ListItemClone.move(0, ((ListHeight + ListPadding) * i))
-  ListItemClone.addTo(ProfileGroup).first()
+  if (!milestones[i].title.includes("Documetation")) {
+    let TotalIssues = parseInt(milestones[i].closed_issues) + parseInt(milestones[i].open_issues)
+    let IssuesCompleted = parseInt(milestones[i].closed_issues)
+    ListItem.findOne('#Title').text(milestones[i].title)
+    ListItem.findOne('#ProgressBarIcon').width( percent(TotalIssues, IssuesCompleted)  *  ProgressBarWidth)
+    ListItem.findOne('#CompleteLabel').text( (percent(TotalIssues, IssuesCompleted) * 100) + "% completed")
+    ListItem.findOne('#IssuesCountLabel').text(milestones[i].open_issues + " open "+ milestones[i].closed_issues+" closed")
+    let ListItemClone = ListItem.clone()
+    ListItemClone.move(0, ((ListHeight + ListPadding) * i))
+    ListItemClone.addTo(ProfileGroup).first()
+  } else {
+    VersionProgress.findOne('VersionLabel').text(milestones[i].title)
+    VersionProgress.findOne('#VersionProgress').move(0,0)
+    VersionProgress.findOne('#ProgressBar').move(0,0)
+    VersionProgress.findOne('#ProgressBarIcon').move(0,0)
+    VersionProgress.findOne('#VersionLabel').move(0,0)
+    VersionProgress.addTo(ProfileGroup).first()
+  }
 }
 
 console.log(milestones)
