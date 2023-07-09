@@ -168,7 +168,7 @@ let ListItem = SVG(`<g id="MilestoneList">
 <text id="IssuesCountLabel" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;"> 1 open 2 closed</text>
 </g>`)
 let VersionProgress = SVG(`<g id="VersionProgress">
-<g id="ProgressBar">
+<g id="ProgressBar" width="686" height="487">
   <rect x="26" y="447" width="646" height="30" rx="8.84" ry="8.84" style="fill: #527f55; opacity: .42;"/>
   <rect x="26" y="447" id="ProgressBarIcon" width="400" height="30" rx="8.84" ry="8.84" style="fill: #39b54a;"/>
 </g>
