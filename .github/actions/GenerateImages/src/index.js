@@ -166,7 +166,7 @@ let ListPadding = 5
 for(let i=0; i<milestones.length; i++) {
   console.log(milestones[i].title)
   let ListItemClone = ListItem.clone()
-  ListItemClone.findOne('#Title').text("test")
+  console.log(ListItemClone.findOne('#Title'))
   ListItemClone.move(0, ((ListHeight + ListPadding) * i))
   ListItemClone.addTo(ProfileGroup).first()
 }
