@@ -164,9 +164,8 @@ let ListItem = SVG(`<g id="MilestoneList">
 let ListHeight = 64
 let ListPadding = 5
 for(let i=0; i<milestones.length; i++) {
-  console.log(milestones[i].title)
+  console.log(ListItem.findOne('#Title'))
   let ListItemClone = ListItem.clone()
-  console.log(ListItemClone.findOne('#Title'))
   ListItemClone.move(0, ((ListHeight + ListPadding) * i))
   ListItemClone.addTo(ProfileGroup).first()
 }
