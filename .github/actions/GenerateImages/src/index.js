@@ -155,7 +155,7 @@ function createProfile(milestones, repo) {
     <polygon points="634.61 377.02 622.69 370.3 610.4 376.3 613.11 362.89 603.6 353.05 617.19 351.49 623.61 339.41 629.3 351.85 642.77 354.22 632.7 363.47 634.61 377.02" style="fill: url(#radial-gradient-7);"/>
     <polygon points="78.41 402.67 66.54 400.99 58.44 409.82 56.36 398.02 45.46 393.04 56.04 387.42 57.41 375.51 66.03 383.84 77.78 381.46 72.52 392.23 78.41 402.67" style="fill: url(#radial-gradient-8);"/>
   </g>
-  <text transform="translate(15.97 97.03) scale(.97 1)" style="fill: #c7b299; font-family: Roboto-Black, Roboto; font-size: 19.52px; font-weight: 800;"><tspan x="0" y="0">Miles</tspan><tspan x="48.47" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="54.89" y="0">ones</tspan></text>
+  <text transform="translate(15.97 97.03) scale(.97 1)" style="fill: #c7b299; font-family: Roboto-Black, Roboto; font-size: 19.52px; font-weight: 800;">Top 3 Milestones</text>
 </svg>`)
 ProfileBackground.addTo(ProfileGroup).first()
 let ListItem = SVG(`<g id="MilestoneList">
@@ -185,7 +185,7 @@ let ListPadding = 5
 let ProgressBarWidth = 209
 let count = 0
 for(let i=0; i<milestones.length; i++) {
-  if (!milestones[i].title.includes("Version")) {
+  if (!milestones[i].title.includes("Version") && count < 3) {
     console.log(milestones[i].title)
     let TotalIssues = parseInt(milestones[i].closed_issues) + parseInt(milestones[i].open_issues)
     let IssuesCompleted = parseInt(milestones[i].closed_issues)
