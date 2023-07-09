@@ -177,6 +177,7 @@ let VersionProgress = SVG(`<g id="VersionProgress">
 let ListHeight = 64
 let ListPadding = 5
 let ProgressBarWidth = 209
+let count = 0
 for(let i=0; i<milestones.length; i++) {
   if (!milestones[i].title.includes("Game Server MSSP Module")) {
     console.log(milestones[i].title)
@@ -187,8 +188,9 @@ for(let i=0; i<milestones.length; i++) {
     ListItem.findOne('#CompleteLabel').text( (percent(TotalIssues, IssuesCompleted) * 100) + "% completed")
     ListItem.findOne('#IssuesCountLabel').text(milestones[i].open_issues + " open "+ milestones[i].closed_issues+" closed")
     let ListItemClone = ListItem.clone()
-    ListItemClone.move(0, ((ListHeight + ListPadding) * i))
+    ListItemClone.move(0, ((ListHeight + ListPadding) * count))
     ListItemClone.addTo(ProfileGroup).first()
+    count++
   } else {
     VersionProgress.findOne('#VersionLabel').text(milestones[i].title)
     // VersionProgress.findOne('#VersionProgress').move(9,300)
