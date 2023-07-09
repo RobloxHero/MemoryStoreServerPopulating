@@ -2,10 +2,8 @@ const { setFailed, getInput, debug } = require( '@actions/core' );
 const { context, getOctokit } = require( '@actions/github' );
 import fs from "fs"
 const { createSVGWindow } = require('svgdom')
-const window = createSVGWindow()
-const document = window.document
 const { SVG, registerWindow, Svg } = require('@svgdotjs/svg.js')
-registerWindow(window, document)
+
 
 function truncate(count, string) {
   if (string.length < count) {
@@ -15,7 +13,9 @@ function truncate(count, string) {
 }
 
 function createIssueListPng(issues) {
-
+  const window = createSVGWindow()
+  const document = window.document
+  registerWindow(window, document)
   const Canvas = SVG(document.documentElement)
   let CanvasHeight = 0
   let CanvasWidth = 323
@@ -116,7 +116,11 @@ function createIssueListPng(issues) {
 }
 
 function createProfile() {
-
+  const window = createSVGWindow()
+  const document = window.document
+  registerWindow(window, document)
+  const Canvas = SVG(document.documentElement)
+  
   let ProfileBackground = SVG(`<svg id="Dashboard" xmlns="http://www.w3.org/2000/svg" width="690" height="555" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 690 555">
   <defs>
     <radialGradient id="radial-gradient" cx="136.68" cy="337.94" fx="136.68" fy="337.94" r="21.97" gradientUnits="userSpaceOnUse">
