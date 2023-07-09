@@ -178,7 +178,7 @@ let RepoTitle = SVG(`<text transform="translate(82.71 41.94) scale(1.14 1)" styl
 RepoTitle.text(repo.name)
 RepoTitle.addTo(ProfileGroup).first()
 let StarsLabel = SVG(`<text transform="translate(621.88 46.34) scale(1.11 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 31.76px; font-weight: 700;"><tspan x="0" y="0">45</tspan></text>`)
-StarsLabel.text(stargazers_count)
+StarsLabel.text(repo.stargazers_count)
 StarsLabel.addTo(ProfileGroup).first()
 let ListHeight = 64
 let ListPadding = 5
