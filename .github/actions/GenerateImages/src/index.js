@@ -185,17 +185,19 @@ let ListPadding = 5
 let ProgressBarWidth = 209
 let count = 0
 for(let i=0; i<milestones.length; i++) {
-  if (!milestones[i].title.includes("Version") || count >= 3) {
-    console.log(milestones[i].title)
-    let TotalIssues = parseInt(milestones[i].closed_issues) + parseInt(milestones[i].open_issues)
-    let IssuesCompleted = parseInt(milestones[i].closed_issues)
-    ListItem.findOne('#Title').text(milestones[i].title)
-    ListItem.findOne('#ProgressBarIcon').width( percent(TotalIssues, IssuesCompleted)  *  ProgressBarWidth)
-    ListItem.findOne('#CompleteLabel').text( (percent(TotalIssues, IssuesCompleted) * 100) + "% completed")
-    ListItem.findOne('#IssuesCountLabel').text(milestones[i].open_issues + " open "+ milestones[i].closed_issues+" closed")
-    let ListItemClone = ListItem.clone()
-    ListItemClone.move(0, ((ListHeight + ListPadding) * count))
-    ListItemClone.addTo(ProfileGroup).first()
+  if (!milestones[i].title.includes("Version")) {
+    if (count < 3) {
+      console.log(milestones[i].title)
+      let TotalIssues = parseInt(milestones[i].closed_issues) + parseInt(milestones[i].open_issues)
+      let IssuesCompleted = parseInt(milestones[i].closed_issues)
+      ListItem.findOne('#Title').text(milestones[i].title)
+      ListItem.findOne('#ProgressBarIcon').width( percent(TotalIssues, IssuesCompleted)  *  ProgressBarWidth)
+      ListItem.findOne('#CompleteLabel').text( (percent(TotalIssues, IssuesCompleted) * 100) + "% completed")
+      ListItem.findOne('#IssuesCountLabel').text(milestones[i].open_issues + " open "+ milestones[i].closed_issues+" closed")
+      let ListItemClone = ListItem.clone()
+      ListItemClone.move(0, ((ListHeight + ListPadding) * count))
+      ListItemClone.addTo(ProfileGroup).first()
+    }
     count++
   } else {
     VersionProgress.findOne('#VersionLabel').text(milestones[i].title)
