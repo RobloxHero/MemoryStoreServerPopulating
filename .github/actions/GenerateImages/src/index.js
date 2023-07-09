@@ -120,7 +120,8 @@ function createProfile() {
   const document = window.document
   registerWindow(window, document)
   const Canvas = SVG(document.documentElement)
-
+  const ProfileGroup = SVG().link('https://github.com/RobloxHero/MemoryStoreServerPopulating')
+  ProfileGroup.addTo(Canvas)
   let ProfileBackground = SVG(`<svg id="Dashboard" xmlns="http://www.w3.org/2000/svg" width="690" height="555" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 690 555">
   <defs>
     <radialGradient id="radial-gradient" cx="136.68" cy="337.94" fx="136.68" fy="337.94" r="21.97" gradientUnits="userSpaceOnUse">
@@ -149,7 +150,8 @@ function createProfile() {
     <polygon points="78.41 402.67 66.54 400.99 58.44 409.82 56.36 398.02 45.46 393.04 56.04 387.42 57.41 375.51 66.03 383.84 77.78 381.46 72.52 392.23 78.41 402.67" style="fill: url(#radial-gradient-8);"/>
   </g>
   <text transform="translate(15.97 97.03) scale(.97 1)" style="fill: #c7b299; font-family: Roboto-Black, Roboto; font-size: 19.52px; font-weight: 800;"><tspan x="0" y="0">Miles</tspan><tspan x="48.47" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="54.89" y="0">ones</tspan></text>
-</svg>`).link('https://github.com/RobloxHero/MemoryStoreServerPopulating').addTo(Canvas)
+</svg>`).addTo(ProfileBackground)
+ProfileBackground.addTo(ProfileGroup).first()
 console.log(Canvas.svg())
 fs.writeFileSync('Profile.svg', Canvas.svg())
 }
