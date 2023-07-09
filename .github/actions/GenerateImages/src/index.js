@@ -165,9 +165,11 @@ let ListHeight = 64
 let ListPadding = 5
 let ProgressBarWidth = 209
 for(let i=0; i<milestones.length; i++) {
+  let TotalIssues = parseInt(milestones[i].closed_issues) + parseInt(milestones[i].open_issues)
+  let IssuesCompleted = parseInt(milestones[i].closed_issues)
   ListItem.findOne('#Title').text(milestones[i].title)
-  ListItem.findOne('#ProgressBarIcon').width( (milestones[i].closed_issues/100) ? (milestones[i].closed_issues/100) : 0 * ProgressBarWidth)
-  ListItem.findOne('#CompleteLabel').text( (100/parseInt(milestones[i].closed_issues)) + "% completed")
+  ListItem.findOne('#ProgressBarIcon').width( (IssuesCompleted / TotalIssues)  *  ProgressBarWidth)
+  ListItem.findOne('#CompleteLabel').text( ((IssuesCompleted / TotalIssues) * 100) + "% completed")
   ListItem.findOne('#IssuesCountLabel').text(milestones[i].open_issues + " open "+ milestones[i].closed_issues+" closed")
   let ListItemClone = ListItem.clone()
   ListItemClone.move(0, ((ListHeight + ListPadding) * i))
