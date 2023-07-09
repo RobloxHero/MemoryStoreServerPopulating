@@ -119,10 +119,10 @@ function createProfile() {
   const window = createSVGWindow()
   const document = window.document
   registerWindow(window, document)
-  const Canvas = SVG(document.documentElement).size(700, 490)
+  const Canvas = SVG(document.documentElement).size(690, 490)
   const ProfileGroup = SVG().link('https://github.com/RobloxHero/MemoryStoreServerPopulating')
   ProfileGroup.addTo(Canvas)
-  let ProfileBackground = SVG(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  let ProfileBackground = SVG(`<svg width="690" height="555" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 690 555">
   <defs>
     <radialGradient id="radial-gradient" cx="136.68" cy="337.94" fx="136.68" fy="337.94" r="21.97" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ee9bff"/>
