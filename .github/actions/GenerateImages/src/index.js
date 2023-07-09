@@ -194,7 +194,7 @@ for(let i=0; i<milestones.length; i++) {
     // VersionProgress.findOne('#VersionProgress').move(9,300)
     // VersionProgress.findOne('#ProgressBar').move(0,0)
     // VersionProgress.findOne('#ProgressBarIcon').move(0,0)
-    // VersionProgress.findOne('#VersionLabel').move(0,0)
+    VersionProgress.findOne('#VersionLabel').move('50%',0)
     VersionProgress.addTo(ProfileGroup).first()
   }
 }
