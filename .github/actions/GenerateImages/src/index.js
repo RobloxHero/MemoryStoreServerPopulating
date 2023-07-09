@@ -119,7 +119,7 @@ function createProfile() {
   const window = createSVGWindow()
   const document = window.document
   registerWindow(window, document)
-  const Canvas = SVG(document.documentElement)
+  const Canvas = SVG(document.documentElement).size(690, 555)
   const ProfileGroup = SVG().link('https://github.com/RobloxHero/MemoryStoreServerPopulating')
   ProfileGroup.addTo(Canvas)
   let ProfileBackground = SVG(`<svg id="Dashboard" xmlns="http://www.w3.org/2000/svg" width="690" height="555" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 690 555">
