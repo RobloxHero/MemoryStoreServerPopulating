@@ -11,6 +11,12 @@ function truncate(count, string) {
   }
  return string.substr(0, count) + '...'
 }
+function percent(total, number) {
+  if (total == 0 || number == 0) {
+    return 0
+  }
+  return number / total
+}
 
 function createIssueListPng(issues) {
   const window = createSVGWindow()
@@ -168,8 +174,8 @@ for(let i=0; i<milestones.length; i++) {
   let TotalIssues = parseInt(milestones[i].closed_issues) + parseInt(milestones[i].open_issues)
   let IssuesCompleted = parseInt(milestones[i].closed_issues)
   ListItem.findOne('#Title').text(milestones[i].title)
-  ListItem.findOne('#ProgressBarIcon').width( (IssuesCompleted / TotalIssues)  *  ProgressBarWidth)
-  ListItem.findOne('#CompleteLabel').text( ((IssuesCompleted / TotalIssues) != NaN ? (IssuesCompleted / TotalIssues) : "0"  * 100) + "% completed")
+  ListItem.findOne('#ProgressBarIcon').width( percent(TotalIssues, IssuesCompleted)  *  ProgressBarWidth)
+  ListItem.findOne('#CompleteLabel').text( (percent(TotalIssues, IssuesCompleted) * 100) + "% completed")
   ListItem.findOne('#IssuesCountLabel').text(milestones[i].open_issues + " open "+ milestones[i].closed_issues+" closed")
   let ListItemClone = ListItem.clone()
   ListItemClone.move(0, ((ListHeight + ListPadding) * i))
