@@ -164,7 +164,7 @@ let ListItem = SVG(`<g id="MilestoneList">
 
 for(let i=0; i<milestones.length; i++) {
   let ListItemClone = ListItem.clone()
-  ListItemClone.findOne('#Title').text("test")
+  ListItemClone.findOne('#Title')
   ListItemClone.addTo(ProfileGroup).first()
 }
 
