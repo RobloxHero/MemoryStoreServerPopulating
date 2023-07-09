@@ -149,10 +149,9 @@ function createProfile() {
     <polygon points="78.41 402.67 66.54 400.99 58.44 409.82 56.36 398.02 45.46 393.04 56.04 387.42 57.41 375.51 66.03 383.84 77.78 381.46 72.52 392.23 78.41 402.67" style="fill: url(#radial-gradient-8);"/>
   </g>
   <text transform="translate(15.97 97.03) scale(.97 1)" style="fill: #c7b299; font-family: Roboto-Black, Roboto; font-size: 19.52px; font-weight: 800;"><tspan x="0" y="0">Miles</tspan><tspan x="48.47" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="54.89" y="0">ones</tspan></text>
-</svg>`)  
-// .link('https://github.com/RobloxHero/MemoryStoreServerPopulating').addTo(Canvas)
+</svg>`).link('https://github.com/RobloxHero/MemoryStoreServerPopulating').addTo(Canvas)
 console.log(Canvas.svg())
-
+fs.writeFileSync('Profile.svg', Canvas.svg())
 }
 
 ( async function main() {
