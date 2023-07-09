@@ -156,15 +156,19 @@ let ListItem = SVG(`<g id="MilestoneList">
 <rect id="ListBackground" x="9" y="107" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"/>
 <text id="Title" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 14.28px; font-weight: 700;">Test</text>
 <g id="ProgressBar">
-  <rect id="ProgressBarIcon" x="19" y="158" width="209" height="6" style="fill: #39b54a;" rx="2" ry="2"/>
+  <rect id="ProgressBarIcon" x="19" y="158" width="0" height="6" style="fill: #39b54a;" rx="2" ry="2"/>
   </g>
 <text id="CompleteLabel" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;">100% Complete</text>
 <text id="IssuesCountLabel" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;"> 1 open 2 closed</text>
 </g>`)
 let ListHeight = 64
 let ListPadding = 5
+let ProgressBarWidth = 209
 for(let i=0; i<milestones.length; i++) {
   ListItem.findOne('#Title').text(milestones[i].title)
+  ListItem.findOne('#ProgressBarIcon').width((milestones[i].open_issues/100) * ProgressBarWidth)
+  ListItem.findOne('#CompleteLabel').text(100/milestones[i].open_issues + "% completed")
+  ListItem.findOne('#IssuesCountLabel').text(milestones[i].open_issues + " open "+ milestones[i].closed_issues+" closed")
   let ListItemClone = ListItem.clone()
   ListItemClone.move(0, ((ListHeight + ListPadding) * i))
   ListItemClone.addTo(ProfileGroup).first()
