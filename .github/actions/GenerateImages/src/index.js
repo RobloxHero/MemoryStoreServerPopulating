@@ -154,7 +154,7 @@ function createProfile(milestones, repo) {
 ProfileBackground.addTo(ProfileGroup).first()
 let ListItem = SVG(`<g id="MilestoneList">
 <rect id="ListBackground" x="9" y="107" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"/>
-<text id="Title" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 14.28px; font-weight: 700;"></text>
+<text id="Title" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 14.28px; font-weight: 700;">Test</text>
 <g id="ProgressBar">
   <rect id="ProgressBarIcon" x="19" y="158" width="209" height="6" style="fill: #39b54a;" rx="2" ry="2"/>
   </g>
@@ -163,9 +163,10 @@ let ListItem = SVG(`<g id="MilestoneList">
 </g>`)
 let ListHeight = 64
 let ListPadding = 5
+console.log(milestones[i].title)
 for(let i=0; i<milestones.length; i++) {
   let ListItemClone = ListItem.clone()
-  ListItemClone.findOne('#Title').text(milestones[i].title)
+  ListItemClone.findOne('#Title').text("test")
   ListItemClone.move(0, ((ListHeight + ListPadding) * i))
   ListItemClone.addTo(ProfileGroup).first()
 }
