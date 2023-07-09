@@ -164,7 +164,7 @@ let ListItem = SVG( `
     <text id="IssuesCountLabel" transform="translate(17.79 44.85) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;"></text>
   </g>
 `)
-ListItem.findOne('#MilestoneList').text('Hello Testing')
+// ListItem.findOne('#MilestoneList').text('Hello Testing')
 ListItem.addTo(ProfileGroup).first()
 console.log(Canvas.svg())
 fs.writeFileSync('Profile.svg', Canvas.svg())
