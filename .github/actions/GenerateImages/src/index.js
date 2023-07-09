@@ -169,7 +169,7 @@ for(let i=0; i<milestones.length; i++) {
   let IssuesCompleted = parseInt(milestones[i].closed_issues)
   ListItem.findOne('#Title').text(milestones[i].title)
   ListItem.findOne('#ProgressBarIcon').width( (IssuesCompleted / TotalIssues)  *  ProgressBarWidth)
-  ListItem.findOne('#CompleteLabel').text( ((IssuesCompleted / TotalIssues) * 100) + "% completed")
+  ListItem.findOne('#CompleteLabel').text( ((IssuesCompleted / TotalIssues) != NaN ? (IssuesCompleted / TotalIssues) : "0"  * 100) + "% completed")
   ListItem.findOne('#IssuesCountLabel').text(milestones[i].open_issues + " open "+ milestones[i].closed_issues+" closed")
   let ListItemClone = ListItem.clone()
   ListItemClone.move(0, ((ListHeight + ListPadding) * i))
