@@ -163,8 +163,7 @@ let ListItem = SVG(`<g id="MilestoneList">
 <text id="IssuesCountLabel" transform="translate(17.79 44.85) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;"></text>
 </g>`)
 ListItem.findOne('#Title').text('Hello Testing')
-console.log(ListItem.findOne('#ProgressBarBack').width())
-ListItem.findOne('#ProgressBarStatus').width(300)
+ListItem.findOne('#ProgressBarStatus').width(ListItem.findOne('#ProgressBarBack').width())
 console.log(ListItem)
 ListItem.addTo(ProfileGroup).first()
 console.log(Canvas.svg())
