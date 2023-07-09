@@ -178,7 +178,7 @@ let ListHeight = 64
 let ListPadding = 5
 let ProgressBarWidth = 209
 for(let i=0; i<milestones.length; i++) {
-  if (!milestones[i].title.includes("Documentation")) {
+  if (!milestones[i].title.includes("Game Server MSSP Module")) {
     console.log(milestones[i].title)
     let TotalIssues = parseInt(milestones[i].closed_issues) + parseInt(milestones[i].open_issues)
     let IssuesCompleted = parseInt(milestones[i].closed_issues)
