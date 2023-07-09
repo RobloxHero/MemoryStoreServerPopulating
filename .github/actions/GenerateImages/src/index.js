@@ -169,10 +169,10 @@ let ListItem = SVG(`<g id="MilestoneList">
 </g>`)
 let VersionProgress = SVG(`<g id="VersionProgress">
 <g id="ProgressBar">
-  <rect width="646" height="30" rx="8.84" ry="8.84" style="fill: #527f55; opacity: .42;"/>
-  <rect id="ProgressBarIcon" width="400" height="30" rx="8.84" ry="8.84" style="fill: #39b54a;"/>
+  <rect x="26" y="447" width="646" height="30" rx="8.84" ry="8.84" style="fill: #527f55; opacity: .42;"/>
+  <rect x="26" y="447" id="ProgressBarIcon" width="400" height="30" rx="8.84" ry="8.84" style="fill: #39b54a;"/>
 </g>
-<text id="VersionLabel" transform="translate(243.94 412.59) scale(1.14 1)" style="fill: #fffe2e; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 35.04px; font-weight: 700;">Version 1</text>
+<text id="VersionLabel" text-anchor="middle" transform="translate(50% 50%) scale(1.14 1)" style="fill: #fffe2e; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 35.04px; font-weight: 700;">Version 1</text>
 </g>`)
 let ListHeight = 64
 let ListPadding = 5
