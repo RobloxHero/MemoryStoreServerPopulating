@@ -185,7 +185,7 @@ let ListPadding = 5
 let ProgressBarWidth = 209
 let count = 0
 for(let i=0; i<milestones.length; i++) {
-  if (!milestones[i].title.includes("Version") && count < 3) {
+  if (!milestones[i].title.includes("Version") || count >= 3) {
     console.log(milestones[i].title)
     let TotalIssues = parseInt(milestones[i].closed_issues) + parseInt(milestones[i].open_issues)
     let IssuesCompleted = parseInt(milestones[i].closed_issues)
