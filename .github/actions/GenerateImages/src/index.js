@@ -179,6 +179,7 @@ let ListPadding = 5
 let ProgressBarWidth = 209
 for(let i=0; i<milestones.length; i++) {
   if (!milestones[i].title.includes("Documetation")) {
+    console.log(milestones[i].title)
     let TotalIssues = parseInt(milestones[i].closed_issues) + parseInt(milestones[i].open_issues)
     let IssuesCompleted = parseInt(milestones[i].closed_issues)
     ListItem.findOne('#Title').text(milestones[i].title)
@@ -190,7 +191,7 @@ for(let i=0; i<milestones.length; i++) {
     ListItemClone.addTo(ProfileGroup).first()
   } else {
     VersionProgress.findOne('VersionLabel').text(milestones[i].title)
-    VersionProgress.findOne('#VersionProgress').move(0,0)
+    VersionProgress.findOne('#VersionProgress').move(9,300)
     VersionProgress.findOne('#ProgressBar').move(0,0)
     VersionProgress.findOne('#ProgressBarIcon').move(0,0)
     VersionProgress.findOne('#VersionLabel').move(0,0)
