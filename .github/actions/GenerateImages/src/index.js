@@ -115,7 +115,7 @@ function createIssueListPng(issues) {
 
 }
 
-function createProfile() {
+function createProfile(milestones, repo) {
   const window = createSVGWindow()
   const document = window.document
   registerWindow(window, document)
@@ -162,9 +162,14 @@ let ListItem = SVG(`<g id="MilestoneList">
 <text id="IssuesCountLabel" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;"> 1 open 2 closed</text>
 </g>`)
 
-ListItem.findOne('#Title').text('Hello Testing')
-console.log(ListItem)
-ListItem.addTo(ProfileGroup).first()
+for(let i=0; i<milestones.length; i++) {
+  let ListItemClone = ListItem.clone()
+  ListItemClone.findOne('#Title').text("test")
+  ListItemClone.addTo(ProfileGroup).first()
+}
+
+console.log(milestones)
+
 console.log(Canvas.svg())
 fs.writeFileSync('Profile.svg', Canvas.svg())
 }
@@ -179,9 +184,13 @@ fs.writeFileSync('Profile.svg', Canvas.svg())
     let issues = await octokit.rest.issues.listForRepo({
       owner,
       repo,
+    })
+    let milestones = await octokit.rest.issues.listMilestones({
+      owner,
+      repo,
     });
     createIssueListPng(issues.data)
-    createProfile()
+    createProfile(milestones.data, context.payload.repository)
   }
   catch(e){
     setFailed(e);
