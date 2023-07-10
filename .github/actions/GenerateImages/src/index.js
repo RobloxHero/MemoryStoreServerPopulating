@@ -135,7 +135,8 @@ function createIssueListPng(issues) {
   fs.writeFileSync('IssuesList.svg', Canvas.svg())  
 
   // Export to PNG
-  sharp(Canvas.svg())
+  let SvgBuffer = new Buffer(Canvas.svg())
+  sharp(SvgBuffer)
   .png()
   .toFile("IssuesList.png")
 }
