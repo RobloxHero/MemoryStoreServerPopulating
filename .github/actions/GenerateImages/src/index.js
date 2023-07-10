@@ -4,6 +4,13 @@ import fs from "fs"
 const { createSVGWindow } = require('svgdom')
 const { SVG, registerWindow, Svg } = require('@svgdotjs/svg.js')
 
+// GitHub Contributers Image - Version 2
+// let ImageCoords = {}
+// function GetImageCoords(StartingPoint, ImageBox) {
+//   if ( ImageCoords.length == 0 ) {
+    
+//   }
+// }
 
 function truncate(count, string) {
   if (string.length < count) {
@@ -16,6 +23,15 @@ function percent(total, number) {
     return 0
   }
   return number / total
+}
+
+function CalcualateDiameter(ImageBoxSP, MaxImageSize, ImagesCount) {
+  let ImagesSP = ImageBoxSP / ImagesCount
+  if (ImagesSP > MaxImageSize) {
+    return MaxImageSize
+  } else {
+    return ImagesSP
+  }
 }
 
 function createIssueListPng(issues) {
@@ -121,7 +137,7 @@ function createIssueListPng(issues) {
 
 }
 
-function createProfile(milestones, repo) {
+function createProfile(milestones, repo, collaborators) {
   const window = createSVGWindow()
   const document = window.document
   registerWindow(window, document)
@@ -180,6 +196,7 @@ RepoTitle.addTo(ProfileGroup).first()
 let StarsLabel = SVG(`<text transform="translate(621.88 46.34) scale(1.11 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 31.76px; font-weight: 700;"><tspan x="0" y="0">45</tspan></text>`)
 StarsLabel.text(repo.stargazers_count)
 StarsLabel.addTo(ProfileGroup).first()
+
 let ListHeight = 64
 let ListPadding = 5
 let ProgressBarWidth = 209
@@ -200,6 +217,21 @@ for(let i=0; i<milestones.length; i++) {
     }
     count++
   } else {
+    let VersionIssuesOpen = 0
+    let VersionIssuesClosed = 0
+    let VersionIssues = issues.filer((issue) => {
+      if (issue.title = milestones[i].title) {
+        if(issue.state == 'open') {
+          VersionIssuesOpen++
+        }
+        if (issue.state == 'closed') {
+          VersionIssuesClosed++
+        }
+        return true
+      }
+    })
+
+    ListItem.findOne('#ProgressBarIcon').width( percent(VersionIssuesOpen, VersionIssues.length)  *  646)
     VersionProgress.findOne('#VersionLabel').text(milestones[i].title)
     VersionProgress.addTo(ProfileGroup).first()
   }
@@ -209,6 +241,22 @@ console.log(repo)
 
 console.log(Canvas.svg())
 fs.writeFileSync('Profile.svg', Canvas.svg())
+}
+
+// Github Contributer Images - Version 2
+function GithubContributerImage() {
+  let ImageBox = SVG('rect').size(300,400).move(300,70)
+  let ImageBoxSP = ImageBox.height() * ImageBox.width()
+  let MaxImageSize = 60
+  for (let i=0; i<collaborators.length; i++) {
+    let StartingPointX = Math.random(ImageBox.width())
+    let StartingPointY = Math.random(ImageBox.height())
+    let ImageDiameter = CalcualateDiameter(ImageBoxSP, MaxImageSize, collaborators.length)
+    let GetInageCoords = GetImageCoords({x:StartingPointX, y:StartingPointY}, {height:ImageBox.height(), width:ImageBox.width()})
+    let Image = SVG().image(collaborators[i].avatar_url).size(ImageDiameter, ImageDiameter)
+    Image.addTo(ImageBox)
+  }
+  ImageBox.addTo(ProfileGroup)
 }
 
 ( async function main() {
@@ -226,8 +274,12 @@ fs.writeFileSync('Profile.svg', Canvas.svg())
       owner,
       repo,
     });
+    let collaborators = octokit.rest.repos.listCollaborators({
+      owner,
+      repo,
+    });
     createIssueListPng(issues.data)
-    createProfile(milestones.data, context.payload.repository)
+    createProfile(milestones.data, context.payload.repository, collaborators)
   }
   catch(e){
     setFailed(e);
