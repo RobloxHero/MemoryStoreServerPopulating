@@ -219,7 +219,7 @@ for(let i=0; i<milestones.length; i++) {
   } else {
     let VersionIssuesOpen = 0
     let VersionIssuesClosed = 0
-    let VersionIssues = issues.filer((issue) => {
+    let VersionIssues = issues.filter((issue) => {
       if (issue.title = milestones[i].title) {
         if(issue.state == 'open') {
           VersionIssuesOpen++
