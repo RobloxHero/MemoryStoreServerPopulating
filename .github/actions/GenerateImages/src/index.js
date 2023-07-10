@@ -230,6 +230,7 @@ for(let i=0; i<milestones.length; i++) {
         return true
       }
     })
+    console.log(issues[1].labels)
 
     VersionProgress.findOne('#ProgressBarVersion').width( percent(VersionIssuesClosed, VersionIssues.length)  *  646)
     VersionProgress.findOne('#VersionLabel').text(milestones[i].title)
