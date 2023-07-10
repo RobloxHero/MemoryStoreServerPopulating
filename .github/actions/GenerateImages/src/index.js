@@ -132,13 +132,10 @@ function createIssueListPng(issues) {
     }   
   }
   // Export to SVG
-  fs.writeFileSync('IssuesList.svg', Canvas.svg())  
+  fs.writeFileSync('GitHub-Images/IssuesList.svg', Canvas.svg())  
 
   // Export to PNG
-  let SvgBuffer = new Buffer(Canvas.svg())
-  sharp(SvgBuffer)
-  .png()
-  .toFile("IssuesList.png")
+
 }
 
 function createProfile(milestones, repo, issues) {
@@ -245,7 +242,7 @@ for(let i=0; i<milestones.length; i++) {
   }
 }
 
-fs.writeFileSync('Profile.svg', Canvas.svg())
+fs.writeFileSync('GitHub-Images/Profile.svg', Canvas.svg())
 }
 
 // Github Contributer Images - Version 2
