@@ -137,7 +137,7 @@ function createIssueListPng(issues) {
 
 }
 
-function createProfile(milestones, repo, collaborators) {
+function createProfile(milestones, repo, issues) {
   const window = createSVGWindow()
   const document = window.document
   registerWindow(window, document)
@@ -279,7 +279,7 @@ function GithubContributerImage() {
       repo,
     });
     createIssueListPng(issues.data)
-    createProfile(milestones.data, context.payload.repository, collaborators)
+    createProfile(milestones.data, context.payload.repository, issues.data)
   }
   catch(e){
     setFailed(e);
