@@ -1,5 +1,5 @@
 name: 'Roblox Forum Github Stats Images'
-run-name: 'Creating Github Images..'
+run-name: 'Creating Github Images...'
 on:
   workflow_dispatch:
   issues:
@@ -17,7 +17,7 @@ on:
       - '*'
 jobs:
   SettingUpEnviroment:
-    name: 'Creating Github Images..'
+    name: 'Creating Github Images...'
     runs-on: 'ubuntu-latest'
     steps:
       - name: Add Checkout
