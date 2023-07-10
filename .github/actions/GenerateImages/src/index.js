@@ -79,9 +79,9 @@ function createIssueListPng(issues) {
 </g>`)
   let CommentText = SVG(`<text style="fill: #7788b2; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 12.85px; font-weight: 700;"></text>`)
   let TodoRect = SVG(`<rect x="9" y="30" width="46" height="18" rx="6.2" ry="6.2" style="fill: #ff7bac;"/>`)
-  let TodoText = SVG(`<text style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="4.08" y="0">odo</tspan></text>`)
+  let TodoText = SVG(`<text style="fill: #2c2c3d; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0" style="letter-spacing: -.01em;">t</tspan><tspan x="4.08" y="0">odo</tspan></text>`)
   let WorkingOnItRect = SVG(`<rect x="9" y="30" width="109" height="18" rx="6.2" ry="6.2" style="fill: #9cbc6f;"/>`)
-  let WorkingOnItText = SVG('<text style="fill: #2c2c3d; font-family: Roboto-Black, Roboto; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0">working on it</tspan></text>')
+  let WorkingOnItText = SVG('<text style="fill: #2c2c3d; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 12.43px; font-weight: 800;"><tspan x="0" y="0">working on it</tspan></text>')
   
   for (let i=0; i<issues.length; i++ ) {
     // Adjust image height as a list item is added
@@ -172,7 +172,7 @@ function createProfile(milestones, repo, issues) {
     <polygon points="634.61 377.02 622.69 370.3 610.4 376.3 613.11 362.89 603.6 353.05 617.19 351.49 623.61 339.41 629.3 351.85 642.77 354.22 632.7 363.47 634.61 377.02" style="fill: url(#radial-gradient-7);"/>
     <polygon points="78.41 402.67 66.54 400.99 58.44 409.82 56.36 398.02 45.46 393.04 56.04 387.42 57.41 375.51 66.03 383.84 77.78 381.46 72.52 392.23 78.41 402.67" style="fill: url(#radial-gradient-8);"/>
   </g>
-  <text transform="translate(15.97 97.03) scale(.97 1)" style="fill: #c7b299; font-family: Roboto-Black, Roboto; font-size: 19.52px; font-weight: 800;">Top 3 Milestones</text>
+  <text transform="translate(15.97 97.03) scale(.97 1)" style="fill: #c7b299; font-family: AdriannaCondensed-ExtraBold, &apos;Adrianna Condensed&apos;; font-size: 19.52px; font-weight: 800;">Top 3 Milestones</text>
 </svg>`)
 ProfileBackground.addTo(ProfileGroup).first()
 let ListItem = SVG(`<g id="MilestoneList">
