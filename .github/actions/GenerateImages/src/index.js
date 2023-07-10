@@ -220,15 +220,20 @@ for(let i=0; i<milestones.length; i++) {
     let VersionIssuesOpen = 0
     let VersionIssuesClosed = 0
     let VersionIssues = issues.filter((issue) => {
-      if (issue.title = milestones[i].title) {
-        if(issue.state == 'open') {
-          VersionIssuesOpen++
+        let VersionLabel = issue.labels.find((label) => {
+          if (label.name == milestones[i].title) {
+            if(issue.state == 'open') {
+              VersionIssuesOpen++
+            }
+            if (issue.state == 'closed') {
+              VersionIssuesClosed++
+            }
+            return true
+          }
+        })
+        if(VersionLabel.length > 0) {
+          return true
         }
-        if (issue.state == 'closed') {
-          VersionIssuesClosed++
-        }
-        return true
-      }
     })
     console.log(issues[0].labels)
 
