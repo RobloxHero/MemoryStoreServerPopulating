@@ -230,7 +230,7 @@ for(let i=0; i<milestones.length; i++) {
         return true
       }
     })
-    console.log(issues[1].labels)
+    console.log(issues[0].labels)
 
     VersionProgress.findOne('#ProgressBarVersion').width( percent(VersionIssuesClosed, VersionIssues.length)  *  646)
     VersionProgress.findOne('#VersionLabel').text(milestones[i].title)
@@ -238,9 +238,6 @@ for(let i=0; i<milestones.length; i++) {
   }
 }
 
-console.log(repo)
-
-console.log(Canvas.svg())
 fs.writeFileSync('Profile.svg', Canvas.svg())
 }
 
