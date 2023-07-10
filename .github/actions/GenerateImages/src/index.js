@@ -3,6 +3,7 @@ const { context, getOctokit } = require( '@actions/github' );
 import fs from "fs"
 const { createSVGWindow } = require('svgdom')
 const { SVG, registerWindow, Svg } = require('@svgdotjs/svg.js')
+import sharp from 'sharp'
 
 // GitHub Contributers Image - Version 2
 // let ImageCoords = {}
@@ -134,7 +135,9 @@ function createIssueListPng(issues) {
   fs.writeFileSync('IssuesList.svg', Canvas.svg())  
 
   // Export to PNG
-
+  sharp(Canvas.svg())
+  .png()
+  .toFile("IssuesList.png")
 }
 
 function createProfile(milestones, repo, issues) {
@@ -235,8 +238,6 @@ for(let i=0; i<milestones.length; i++) {
           return true
         }
     })
-    console.log(issues[0].labels)
-
     VersionProgress.findOne('#ProgressBarVersion').width( percent(VersionIssuesClosed, VersionIssues.length)  *  646)
     VersionProgress.findOne('#VersionLabel').text(milestones[i].title)
     VersionProgress.addTo(ProfileGroup).first()
