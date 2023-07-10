@@ -1,10 +1,16 @@
 name: 'Roblox Forum Github Stats Images'
 on:
   workflow_dispatch:
-  label:
+  issues:
     types:
-      - created
       - labeled
+      - milestoned
+      - edited
+      - unlabeled
+      - demilestoned
+      - closed
+      - opened
+
   push:
     branches:
       - '*'
