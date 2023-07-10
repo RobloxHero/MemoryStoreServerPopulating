@@ -231,7 +231,7 @@ for(let i=0; i<milestones.length; i++) {
       }
     })
 
-    ListItem.findOne('#ProgressBarVersion').width( percent(VersionIssuesOpen, VersionIssues.length)  *  646)
+    VersionProgress.findOne('#ProgressBarVersion').width( percent(VersionIssuesOpen, VersionIssues.length)  *  646)
     VersionProgress.findOne('#VersionLabel').text(milestones[i].title)
     VersionProgress.addTo(ProfileGroup).first()
   }
