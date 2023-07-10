@@ -231,7 +231,7 @@ for(let i=0; i<milestones.length; i++) {
             return true
           }
         })
-        if( VersionLabel != nil && VersionLabel.length > 0) {
+        if( VersionLabel != null && VersionLabel.length > 0) {
           return true
         }
     })
