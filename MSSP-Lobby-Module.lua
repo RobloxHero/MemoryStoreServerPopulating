@@ -4,11 +4,9 @@ local MemoryStoreService = game:GetService("MemoryStoreService")
 local ServersListStore = MemoryStoreService:GetSortedMap("ServersList")
 local TeleportService = game:GetService("TeleportService")
 
--- module Attributes
-script:SetAttribute("MaxServerPlayers", 10)
-script:SetAttribute("MapName", "Map 1")
-
-MSSP.MapName = ""
+-- module properties
+MSSP.MaxServerPlayers = 10
+MSSP.MapName = "Map 1"
 
 local LoadServerListEvent = Instance.new("RemoteEvent")
 LoadServerListEvent.Name = "LoadServerList"
