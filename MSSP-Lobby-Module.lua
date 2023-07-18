@@ -4,6 +4,10 @@ local MemoryStoreService = game:GetService("MemoryStoreService")
 local ServersListStore = MemoryStoreService:GetSortedMap("ServersList")
 local TeleportService = game:GetService("TeleportService")
 
+-- module parameters
+MSSP.MaxServerPlayers = 0
+MSSP.MapName = ""
+
 local LoadServerListEvent = Instance.new("RemoteEvent")
 LoadServerListEvent.Name = "LoadServerList"
 LoadServerListEvent.Parent = ReplicatedStorage
