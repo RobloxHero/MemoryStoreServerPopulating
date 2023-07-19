@@ -13,7 +13,6 @@ MSSP.IsConfigured = false
 MSSP.ServerPlayers = {["PlaceId"] = MSSP.PlaceId, ["Players"]= {}}
 
 function MSSP.Configure(ServerName, ServerMaxPlayers, PlaceId)
-	print("configured")
 	MSSP.ServerName = ServerName
 	MSSP.ServerMaxPlayerCount = ServerMaxPlayers
 	MSSP.PlaceId = PlaceId
