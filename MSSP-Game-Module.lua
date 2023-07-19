@@ -63,8 +63,7 @@ end
 
 function MSSP.ShutdownServer()
 	local RemoveSuccess, RemoveResult = pcall(function()
-		MSSP.ServerId = GetServerId()
-		return ServersListStore:RemoveAsync(MSSP.PlaceId)
+		return ServersListStore:RemoveAsync(MSSP.ServerId)
 	end)
 end
 
