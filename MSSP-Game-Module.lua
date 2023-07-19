@@ -9,7 +9,16 @@ MSSP.ServerIsInit = false
 MSSP.ServerMaxPlayerCount = nil
 MSSP.ServerId = nil
 MSSP.PlaceId = nil
+MSSP.IsConfigured = false
 MSSP.ServerPlayers = {["PlaceId"] = MSSP.PlaceId, ["Players"]= {}}
+
+function MSSP.Configure(ServerName, ServerMaxPlayers, PlaceId)
+	print("configured")
+	MSSP.ServerName = ServerName
+	MSSP.ServerMaxPlayerCount = ServerMaxPlayers
+	MSSP.PlaceId = PlaceId
+	MSSP.IsConfigured = true
+end
 
 function MSSP.GetServerId()
 	if game.JobId == "" or game.JobId == nil or not game.JobId then
@@ -29,7 +38,6 @@ end
 
 function MSSP.AddPlayerToServer(player, PlayerCount)
 	repeat wait() until MSSP.ServerIsInit == true
-	MSSP.ServerId = MSSP.GetServerId()
 	local RemoveId
 	local ReadSuccess, ServerStorePlayers = pcall(function()
 		local result = ServersListStore:GetAsync(MSSP.ServerId)
@@ -53,9 +61,10 @@ function MSSP.AddPlayerToServer(player, PlayerCount)
 	end
 end
 
-local function StartServer()
+function MSSP.StartServer()
+	MSSP.ServerId = MSSP.GetServerId()
 	local AddSuccess, AddResult = pcall(function()
-		return ServersListStore:SetAsync(MSSP.ServerId, ServerPlayers, 604800)
+		return ServersListStore:SetAsync(MSSP.ServerId, MSSP.ServerPlayers, 604800)
 	end)
 	print("Server is running.")
 	MSSP.ServerIsInit = true
@@ -69,4 +78,6 @@ end
 
 game:BindToClose(MSSP.ShutdownServer)
 coroutine.wrap(MSSP.StartServer)()
+
+return MSSP
 
