@@ -29,7 +29,7 @@ end
 
 function MSSP.AddPlayerToServer(player, PlayerCount)
 	repeat wait() until MSSP.ServerIsInit == true
-	MSSP.ServerId = GetServerId()
+	MSSP.ServerId = MSSP.GetServerId()
 	local RemoveId
 	local ReadSuccess, ServerStorePlayers = pcall(function()
 		local result = ServersListStore:GetAsync(MSSP.ServerId)
