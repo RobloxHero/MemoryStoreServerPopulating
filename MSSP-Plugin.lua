@@ -3,7 +3,7 @@ local MapName
 local MaxServerPlayers = 0
 local ServerType = "Lobby"
 local ServerButtonImgs = {["Lobby"] = "rbxassetid://14103087924", ["Game"] = "rbxassetid://14103088087"}
-local MSSPVersion = "main"
+local MSSPVersion = "Dev"
 local ServerScriptService = game:GetService("ServerScriptService")
 local StarterPlayerscripts = game:GetService("StarterPlayer").StarterPlayerScripts
 local HttpService = game:GetService("HttpService")
@@ -46,18 +46,12 @@ end
 -- Make the request to our endpoint URL
 local function FileUpdate()
 	for count, file in pairs(ServerScriptService:GetChildren()) do
-		if file.Name ~= "MSSP-"..ServerType.."-Module"  then
-			file:Destroy()
-		end
 		if file.Name == "MSSP-"..ServerType.."-Module" then
 			file:Destroy()
 		end
 	end
 	GetFileFromGithub("MSSP-"..ServerType.."-Module")
 	for count, file in pairs(StarterPlayerscripts:GetChildren()) do
-		if file.Name ~= "MSSP-"..ServerType.."-Localscript" then
-			file:Destroy()
-		end
 		if file.Name == "MSSP-"..ServerType.."-Localscript" then
 			file:Destroy()
 		end

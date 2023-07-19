@@ -8,7 +8,7 @@ MSSP.ServerIsInit = false
 MSSP.ServerMaxPlayerCount = nil
 MSSP.ServerId = nil
 MSSP.PlaceId = nil
-MSSP.ServerPlayers = {["PlaceId"] = PlaceId, ["Players"]= {}}
+MSSP.ServerPlayers = {["PlaceId"] = MSSP.PlaceId, ["Players"]= {}}
 
 function MSSP.GetServerId()
 	if game.JobId == "" or game.JobId == nil or not game.JobId then
@@ -19,7 +19,7 @@ function MSSP.GetServerId()
 	end
 end
 
-function MSSP.RemovePlayerFromServer()
+function MSSP.RemovePlayerFromServer(player)
   local result = ServersListStore:UpdateAsync(MSSP.ServerId, function(ps)
     table.remove(ps["Players"], player.UserId)
     return ps
@@ -60,8 +60,6 @@ local function StartServer()
 	MSSP.ServerIsInit = true
 end
 
--- Placeid??
-
 function MSSP.ShutdownServer()
 	local RemoveSuccess, RemoveResult = pcall(function()
 		MSSP.ServerId = GetServerId()
@@ -69,6 +67,6 @@ function MSSP.ShutdownServer()
 	end)
 end
 
-game:BindToClose(ShutdownServer)
-coroutine.wrap(InitServer)()
+game:BindToClose(MSSP.ShutdownServer)
+coroutine.wrap(MSSP.StartServer)()
 
