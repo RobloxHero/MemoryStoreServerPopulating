@@ -2,6 +2,7 @@ local MSSP = {}
 
 local MemoryStoreService = game:GetService("MemoryStoreService")
 local ServersListStore = MemoryStoreService:GetSortedMap("ServersList")
+local TeleportService = game:GetService("TeleportService")
 
 MSSP.ServerName = nil
 MSSP.ServerIsInit = false
