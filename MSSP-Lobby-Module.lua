@@ -4,13 +4,14 @@ local MemoryStoreService = game:GetService("MemoryStoreService")
 local ServersListStore = MemoryStoreService:GetSortedMap("ServersList")
 local TeleportService = game:GetService("TeleportService")
 
--- module properties
-MSSP.MaxServerPlayers = 10
-MSSP.MapName = "Map 1"
 
 local LoadServerListEvent = Instance.new("RemoteEvent")
 LoadServerListEvent.Name = "LoadServerList"
 LoadServerListEvent.Parent = ReplicatedStorage
+
+local ActivateServerGuiEvent = Instance.new("RemoteEvent")
+ActivateServerGuiEvent.Name = "ActivateServerGui"
+ActivateServerGuiEvent.Parent = ReplicatedStorage
 
 local LastServerInTheList = nil
 local ShowPagination = false
@@ -21,8 +22,33 @@ local Page = 1
 local ServerAdmin = Instance.new("ScreenGui")
 ServerAdmin.Name = "ServerAdmin"
 ServerAdmin.IgnoreGuiInset = true
+ServerAdmin.DisplayOrder = 1
+ServerAdmin.ZIndexBehavior = Enum.ZIndexBehavior.Global
 ServerAdmin.Enabled = false
 
+local ServerAdminButtonGui = Instance.new("ScreenGui")
+ServerAdminButtonGui.Name = "ServerAdminButtonGui"
+ServerAdminButtonGui.IgnoreGuiInset = true
+ServerAdminButtonGui.DisplayOrder = 2
+ServerAdminButtonGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+ServerAdminButtonGui.Enabled = true
+
+local ServerAdminButton = Instance.new("TextButton")
+ServerAdminButton.Name = "ServerAdminButton"
+ServerAdminButton.AnchorPoint = Vector2.new(1,0)
+ServerAdminButton.BackgroundTransparency = .5
+ServerAdminButton.BackgroundColor3 = Color3.new(0, 0, 0)
+ServerAdminButton.TextColor = BrickColor.new(1,1,1)
+ServerAdminButton.Position = UDim2.new(1, -53, 0, 5)
+ServerAdminButton.Size = UDim2.new(0, 85, 0, 30)
+ServerAdminButton.Text = "Server Admin"
+ServerAdminButton.Visible = true
+ServerAdminButton.ZIndex = 10
+ServerAdminButton.Parent = ServerAdminButtonGui
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(.3,.3)
+UICorner.Parent = ServerAdminButton
 
 local Background = Instance.new("Frame")
 Background.BackgroundColor3 = Color3.fromRGB(141, 193, 238)
@@ -85,14 +111,14 @@ Server.Visible = false
 Server.Name = "Server"
 Server.Parent = ServerList
 
-local RemoveServer = Instance.new("ImageButton")
-RemoveServer.AnchorPoint = Vector2.new(1,1)
-RemoveServer.BackgroundTransparency = 1
-RemoveServer.Position = UDim2.new(0.96, 0, 0.9, 0)
-RemoveServer.Size = UDim2.new(0, 45, 0, 45)
-RemoveServer.Image = "rbxassetid://13967004049"
-RemoveServer.Name = "RemoveServer"
-RemoveServer.Parent = Server
+--local RemoveServer = Instance.new("ImageButton")
+--RemoveServer.AnchorPoint = Vector2.new(1,1)
+--RemoveServer.BackgroundTransparency = 1
+--RemoveServer.Position = UDim2.new(0.96, 0, 0.9, 0)
+--RemoveServer.Size = UDim2.new(0, 45, 0, 45)
+--RemoveServer.Image = "rbxassetid://13967004049"
+--RemoveServer.Name = "RemoveServer"
+--RemoveServer.Parent = Server
 
 local JesusLabel = Instance.new("TextLabel")
 JesusLabel.AnchorPoint = Vector2.new(1,0)
@@ -145,6 +171,9 @@ MapLabel.Parent = Server
 function MSSP.LoadGui(player)
 	local ServerAdminClone = ServerAdmin:Clone()
 	ServerAdminClone.Parent = player.PlayerGui
+	local ServerAdminButtonGuiClone = ServerAdminButtonGui:Clone()
+	ServerAdminButtonGuiClone.Parent = player.PlayerGui
+	ServerAdminButtonGuiClone.Enabled = true
 	return player.PlayerGui.ServerAdmin
 end
 
@@ -156,6 +185,7 @@ end
 
 -- Find the first available Server and teleport.
 local function LoadServerList(player)
+
 	local gui = player.PlayerGui.ServerAdmin
 	-- Delete all the Existing ServerList Items
 	local ExistingServerList = gui.ServerList:GetChildren()
@@ -184,7 +214,8 @@ local function LoadServerList(player)
 		SendChatMessage(#GetServersResult.." Servers Found")
 		for count, item in ipairs(GetServersResult) do
 			local ServerId = item["key"]
-			local PlaceId = tonumber(item["value"])
+			local ServerInfo = item["value"]
+			print(ServerInfo)
 			-- read the memory queue to get the number of players in the server
 			local ReadSuccess, items, id = pcall(function()
 				local ServerQueue = MemoryStoreService:GetQueue(ServerId)
@@ -193,22 +224,13 @@ local function LoadServerList(player)
 			end)
 			-- Create the Server List Item
 			if ReadSuccess and #items > 0 then
-				local PlayersInQueue = tonumber(items[1])
+				local PlayersInServer = #ServerInfo["Players"]
 				local ServerListItem = gui.ServerList.Server:Clone()
 				ServerListItem.Name = ServerId
 				ServerListItem.ServerIdLabel.Text ="ServerId: ".. ServerId
-				ServerListItem.MapLabel.Text = "PlaceID: ".. PlaceId
-				ServerListItem.PlayersLabel.Text = "Players: ".. items[1]
-				-- Remove server button then reload the list when the button is clicked
-				ServerListItem.RemoveServer.MouseButton1Click:Connect(function()
-					local GetServersSuccess, GetServersResult = pcall(function()
-						local ServerList = ServersListStore:RemoveAsync(ServerId)
-						return ServerList
-					end)
-					if GetServersSuccess == true then
-						LoadServerList(Page)
-					end
-				end)
+				ServerListItem.MapLabel.Text = "Server Name: ".. ServerInfo["ServerName"]
+				ServerListItem.PlayersLabel.Text = "Players: ".. PlayersInServer
+				
 				ServerListItem.Parent = gui.ServerList
 				ServerListItem.Visible = true
 			end
@@ -223,7 +245,7 @@ end
 
 local LastServerInTheList = nil
 -- Find the first available Server and teleport.
- function MSSP.TeleportToFirstAvailableServer(player, map)
+ function MSSP.TeleportToFirstAvailableServer(player, PlaceId)
 	local ServersPageSize = 100
 	local FoundMatch = false
 	-- Pull a list of Available Servers from Memory Sorted Map
@@ -238,49 +260,34 @@ local LastServerInTheList = nil
 		for count, item in ipairs(GetServersResult) do
 			local ServerId = item["key"]
 			if ServerId ~= "0" then
-				local PlaceId = tonumber(item["value"])
-				local ReadSuccess, items, id = pcall(function()
-					local ServerQueue = MemoryStoreService:GetQueue(ServerId)
-					local result  = ServerQueue:ReadAsync(1, true, 30)
-					return result
-				end)
-				-- If the Server has space then teleport
-				if ReadSuccess and #items > 0 then
-					local PlayersInQueue = tonumber(items[1])
-					if PlayersInQueue > 1 and PlayersInQueue < MaxPlayersInServer then
-						FoundMatch = true
-						SendChatMessage("Found Server: "..ServerId.. " with ".. PlayersInQueue.. " players in the queue.")
-						local TeleportOptions = Instance.new("TeleportOptions")
-						TeleportOptions.ServerInstanceId = ServerId
-						local Result = TeleportService:TeleportAsync(PlaceId, {player}, TeleportOptions)
-						SendChatMessage(Result)
-					end
+				local ServerInfo = item["value"]
+					if #ServerInfo["Players"] > 1 and #ServerInfo["Players"] < ServerInfo["MaxServerPlayers"] then
+					FoundMatch = true
+					SendChatMessage("Found Server: "..ServerId.. " with ".. #ServerInfo["Players"] .. " players in the queue.")
+					local TeleportOptions = Instance.new("TeleportOptions")
+					TeleportOptions.ServerInstanceId = ServerId
+					local Result = TeleportService:TeleportAsync(ServerInfo["PlaceId"], {player}, TeleportOptions)
+					SendChatMessage(Result)
 				end
 				wait(1)
 			end
 			if count == #GetServersResult and FoundMatch == false then
-				local Result = TeleportService:TeleportAsync(map, {player})
+				local Result = TeleportService:TeleportAsync(PlaceId, {player})
 				SendChatMessage(Result)
 			end
 		end
 	end
-	-- If there are no servers in the Memory Sorted Map then just teleport to the place
 	if GetServersSuccess == false then
-		TeleportService:TeleportAsync(map, {player})
+		TeleportService:TeleportAsync(PlaceId, {player})
 	end
 end
 
-function MSSP.ActivateServerGui(player, isActive)
-	if isActive then
-		player.PlayerGui.ServerAdmin.Enabled = isActive
-	end
-	if not isActive then
-		player.PlayerGui.ServerAdmin.Enabled = true
-	end
+function ActivateServerGui(player, isActive)
+	player.PlayerGui.ServerAdmin.Enabled = not player.PlayerGui.ServerAdmin.Enabled
 end
 
 
 LoadServerListEvent.OnServerEvent:Connect(LoadServerList)
-
+ActivateServerGuiEvent.OnServerEvent:Connect(ActivateServerGui)
 
 return MSSP

@@ -10,12 +10,16 @@ MSSP.ServerMaxPlayerCount = nil
 MSSP.ServerId = nil
 MSSP.PlaceId = nil
 MSSP.IsConfigured = false
-MSSP.ServerPlayers = {["PlaceId"] = MSSP.PlaceId, ["Players"]= {}}
+MSSP.ServerInfo = {["Players"] = {}}
 
 function MSSP.Configure(ServerName, ServerMaxPlayers, PlaceId)
+	print("configured")
 	MSSP.ServerName = ServerName
+	MSSP.ServerInfo["ServerName"] = ServerName
 	MSSP.ServerMaxPlayerCount = ServerMaxPlayers
+	MSSP.ServerInfo["MaxServerPlayers"] = ServerMaxPlayers
 	MSSP.PlaceId = PlaceId
+	MSSP.ServerInfo["PlaceId"] = PlaceId
 	MSSP.IsConfigured = true
 end
 
@@ -30,8 +34,9 @@ end
 
 function MSSP.RemovePlayerFromServer(player)
   local result = ServersListStore:UpdateAsync(MSSP.ServerId, function(ps)
-    table.remove(ps["Players"], player.UserId)
-    return ps
+		local ServerInfo = ps
+		table.insert(ServerInfo["Players"], player.UserId)
+		return ServerInfo
   end, 604800)
 end
 
@@ -44,9 +49,10 @@ function MSSP.AddPlayerToServer(player, PlayerCount)
 	end)
 	if PlayerCount < MSSP.ServerMaxPlayerCount then
 		local AddSuccess, AddResult = pcall(function()
-      local result = ServersListStore:UpdateAsync(MSSP.ServerId, function(ps)
-        table.insert(ps["Players"], player.UserId)
-        return ps
+			local result = ServersListStore:UpdateAsync(MSSP.ServerId, function(ps)
+				local ServerInfo = ps
+				table.insert(ServerInfo["Players"], player.UserId)
+        		return ServerInfo
       end, 604800)
 		end)
 	end
@@ -61,9 +67,10 @@ function MSSP.AddPlayerToServer(player, PlayerCount)
 end
 
 function MSSP.StartServer()
+	wait(2)
 	MSSP.ServerId = MSSP.GetServerId()
 	local AddSuccess, AddResult = pcall(function()
-		return ServersListStore:SetAsync(MSSP.ServerId, MSSP.ServerPlayers, 604800)
+		return ServersListStore:SetAsync(MSSP.ServerId, MSSP.ServerInfo, 604800)
 	end)
 	print("Server is running.")
 	MSSP.ServerIsInit = true
