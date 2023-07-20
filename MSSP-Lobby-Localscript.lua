@@ -1,5 +1,13 @@
 wait(1)
 local PlayerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local Service = game:GetService("TextChatService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local SendChatMessageEvent = ReplicatedStorage:WaitForChild("SendChatMessage")
+
+local function SendChatMessage(msg)
+	local text = "<font color = \"rgb(255,255,0)\">" .. msg .. "</font>"
+	Service.TextChannels.RBXSystem:DisplaySystemMessage(text)
+end
 
 PlayerGui.ServerAdmin:GetPropertyChangedSignal("Enabled"):Connect(function()
 	local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -21,3 +29,5 @@ PlayerGui.ServerAdminButtonGui.ServerAdminButton.MouseButton1Click:Connect(funct
 	local ActivateServerGuiEvent = ReplicatedStorage:WaitForChild("ActivateServerGui")
 	ActivateServerGuiEvent:FireServer(true)
 end)
+
+SendChatMessageEvent.OnClientEvent:Connect(SendChatMessage)

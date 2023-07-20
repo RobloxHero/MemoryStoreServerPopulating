@@ -13,6 +13,10 @@ local ActivateServerGuiEvent = Instance.new("RemoteEvent")
 ActivateServerGuiEvent.Name = "ActivateServerGui"
 ActivateServerGuiEvent.Parent = ReplicatedStorage
 
+local SendChatMessageEvent = Instance.new("RemoteEvent")
+SendChatMessageEvent.Name = "SendChatMessage"
+SendChatMessageEvent.Parent = ReplicatedStorage
+
 local LastServerInTheList = nil
 local ShowPagination = false
 local ServerList
@@ -178,9 +182,8 @@ function MSSP.LoadGui(player)
 end
 
 -- Send Chat Message
-local function SendChatMessage(text)
-	--local formattedText = string.format("<font face='Roboto' size='18' color='#ecf072'><strong>%s</strong></font>", text)
-	print(text)
+local function SendChatMessage(player, text)
+	SendChatMessageEvent:FireClient(player, text)
 end
 
 -- Find the first available Server and teleport.
@@ -211,11 +214,12 @@ local function LoadServerList(player)
 	-- If the Sorted Map Contains Servers
 	if GetServersSuccess == true then
 		-- Loop through the list and create a server list gui item
-		SendChatMessage(#GetServersResult.." Servers Found")
+		SendChatMessage(player, #GetServersResult.." Servers Found")
 		for count, item in ipairs(GetServersResult) do
 			local ServerId = item["key"]
 			local ServerInfo = item["value"]
-			print(ServerInfo)
+			SendChatMessage(player, item["key"])
+			SendChatMessage(player, item["value"]["PlaceId"])
 			-- read the memory queue to get the number of players in the server
 			local ReadSuccess, items, id = pcall(function()
 				local ServerQueue = MemoryStoreService:GetQueue(ServerId)
@@ -245,8 +249,8 @@ end
 
 local LastServerInTheList = nil
 -- Find the first available Server and teleport.
- function MSSP.TeleportToFirstAvailableServer(player, PlaceId)
-	local ServersPageSize = 100
+function MSSP.TeleportToFirstAvailableServer(player, PlaceId)
+	local ServersPageSize = 10
 	local FoundMatch = false
 	-- Pull a list of Available Servers from Memory Sorted Map
 	local GetServersSuccess, GetServersResult = pcall(function()
@@ -254,38 +258,32 @@ local LastServerInTheList = nil
 	end)
 	-- If the Sorted Map Contains Servers
 	if GetServersSuccess == true then
-		-- Loop through the list and check the queue for the server with the Server Job ID
-		-- The queue only contains a Player Count
-		SendChatMessage(#GetServersResult.." Servers Found")
+		SendChatMessage(player, #GetServersResult .." Servers Found")
 		for count, item in ipairs(GetServersResult) do
+			SendChatMessage(player, count)
+			SendChatMessage(player, item["value"]["Players"])
 			local ServerId = item["key"]
 			if ServerId ~= "0" then
 				local ServerInfo = item["value"]
 					if #ServerInfo["Players"] > 1 and #ServerInfo["Players"] < ServerInfo["MaxServerPlayers"] then
 					FoundMatch = true
-					SendChatMessage("Found Server: "..ServerId.. " with ".. #ServerInfo["Players"] .. " players in the queue.")
+					SendChatMessage(player, "Found Server: "..ServerId.. " with ".. #ServerInfo["Players"] .. " players in the queue.")
 					local TeleportOptions = Instance.new("TeleportOptions")
 					TeleportOptions.ServerInstanceId = ServerId
 					local Result = TeleportService:TeleportAsync(ServerInfo["PlaceId"], {player}, TeleportOptions)
-					SendChatMessage(Result)
+					SendChatMessage(player, Result)
 				end
 				wait(1)
 			end
-			if count == #GetServersResult and FoundMatch == false then
-				local Result = TeleportService:TeleportAsync(PlaceId, {player})
-				SendChatMessage(Result)
-			end
 		end
-	end
-	if GetServersSuccess == false then
-		TeleportService:TeleportAsync(PlaceId, {player})
+		local Result = TeleportService:TeleportAsync(PlaceId, {player})
+		SendChatMessage(player, Result)
 	end
 end
 
 function ActivateServerGui(player, isActive)
 	player.PlayerGui.ServerAdmin.Enabled = not player.PlayerGui.ServerAdmin.Enabled
 end
-
 
 LoadServerListEvent.OnServerEvent:Connect(LoadServerList)
 ActivateServerGuiEvent.OnServerEvent:Connect(ActivateServerGui)
