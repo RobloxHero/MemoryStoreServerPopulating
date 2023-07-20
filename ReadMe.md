@@ -1,15 +1,18 @@
 <div align="center">
 <h3>This plugin is still in Development</h3>
 <br>
-<a href="https://www.roblox.com/library/14113075182/Memory-Store-Server-Populating">
 <img width=125 src="https://storage.googleapis.com/compass-of-truth/images/ToolbarOpenWidget.jpg"/>
-<h3 >Memory Store Server Population Plugin</h3>
-</a>
 </div>
+
 <div align="center">
-<a href="https://www.roblox.com/library/14113075182/Memory-Store-Server-Populating">
-<h3>Dev Forum Link<h3>
-</a>
+<h3>
+
+[Memory Store Server Population Plugin](https://www.roblox.com/library/14113075182/Memory-Store-Server-Populating)
+
+</h3>
+
+[Dev Forum Link](https://www.roblox.com/library/14113075182/Memory-Store-Server-Populating)
+
 <br>
 </div>
 
