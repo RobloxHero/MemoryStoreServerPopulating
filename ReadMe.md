@@ -1,6 +1,6 @@
 <div align="center">
 <h3>This plugin is still in Development</h3>
-<hr>
+<br>
 <a href="https://www.roblox.com/library/14113075182/Memory-Store-Server-Populating">
 <img width=125 src="https://storage.googleapis.com/compass-of-truth/images/ToolbarOpenWidget.jpg"/>
 <h3 >Memory Store Server Population Plugin</h3>
@@ -10,7 +10,7 @@
 <a href="https://www.roblox.com/library/14113075182/Memory-Store-Server-Populating">
 <h3>Dev Forum Link<h3>
 </a>
-<hr>
+<br>
 </div>
 
 This is a Server Matchmaking plugin that uses Memory Store.
@@ -19,7 +19,7 @@ This is a Server Matchmaking plugin that uses Memory Store.
 
 **Lobby Servers** teleport people to the available servers.
 
-<hr>
+<br>
 
 <h2>Install</h2>
 
@@ -74,7 +74,7 @@ MSSP.AddPlayerToServer(player, #Players:GetChildren())
 MSSP.RemovePlayerFromServer(player)
  ```
 
-<hr>
+<br>
 
 <h3>Development Milestones:</h3>
 
@@ -94,7 +94,8 @@ MSSP.RemovePlayerFromServer(player)
 <img width=300 src="https://storage.googleapis.com/compass-of-truth/images/PluginGui_1_1.gif"/> 
 <img width=300 src="https://storage.googleapis.com/compass-of-truth/images/Plugin%20Explorer_1_1.gif"/> 
 </div>
-<div align="center"><img width=300 src="https://storage.googleapis.com/compass-of-truth/images/ServerAdmin_1_1.gif"/> 
+<div align="center">
+<img width=300 src="https://storage.googleapis.com/compass-of-truth/images/ServerAdmin_1_1.gif"/> 
 </div>
 <hr>
 
