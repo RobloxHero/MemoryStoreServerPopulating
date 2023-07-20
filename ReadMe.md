@@ -92,10 +92,10 @@ MSSP.RemovePlayerFromServer(player)
 
 <div align="center">
 <img width=300 src="https://storage.googleapis.com/compass-of-truth/images/PluginGui_1_1.gif"/> 
-<img width=300 src="https://storage.googleapis.com/compass-of-truth/images/Plugin%20Explorer_1_1.gif"/> 
+<img width=300 src="https://storage.googleapis.com/compass-of-truth/images/Plugin%20Explorer_1_2.gif"/> 
 </div>
 <div align="center">
-<img width=300 src="https://storage.googleapis.com/compass-of-truth/images/ServerAdmin_1_1.gif"/> 
+<img width=300 src="https://storage.googleapis.com/compass-of-truth/images/ServerAdmin_1_2.gif"/> 
 </div>
 <hr>
 
