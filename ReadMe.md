@@ -7,7 +7,7 @@
 <div align="center">
 <h3>
 
-[Memory Store Server Population Plugin](https://www.roblox.com/library/14113075182/Memory-Store-Server-Populating)
+[Memory Store Server Population Plugin](https://create.roblox.com/marketplace/asset/14113075182/Memory-Store-Server-Populating)
 
 </h3>
 
