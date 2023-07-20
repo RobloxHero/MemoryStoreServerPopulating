@@ -26,34 +26,34 @@
     <polygon points="78.41 402.67 66.54 400.99 58.44 409.82 56.36 398.02 45.46 393.04 56.04 387.42 57.41 375.51 66.03 383.84 77.78 381.46 72.52 392.23 78.41 402.67" style="fill: url(#radial-gradient-8);"></polygon>
   </g>
   <text transform="translate(15.97 97.03) scale(.97 1)" style="fill: #c7b299; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 19.52px; font-weight: 800;" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}">Top 3 Milestones</text>
-</svg><text transform="translate(82.71 41.94) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 21.93px; font-weight: 700;" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">MemoryStoreServerPopulating</tspan></text><text transform="translate(621.88 46.34) scale(1.11 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 31.76px; font-weight: 700;" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">1</tspan></text><g id="SvgjsG1021">
-<rect id="SvgjsRect1020" x="9" y="107" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"></rect>
-<text id="SvgjsText1019" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 14.28px; font-weight: 700;" x="0" y="0" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">Documentation</tspan></text>
-<g id="SvgjsG1018">
-  <rect id="SvgjsRect1017" x="19" y="158" width="209" height="6" style="fill: #39b54a;" rx="2" ry="2"></rect>
+</svg><text transform="translate(82.71 41.94) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 21.93px; font-weight: 700;" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">MemoryStoreServerPopulating</tspan></text><text transform="translate(621.88 46.34) scale(1.11 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 31.76px; font-weight: 700;" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">1</tspan></text><g id="SvgjsG1024">
+<rect id="SvgjsRect1023" x="9" y="107" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"></rect>
+<text id="SvgjsText1022" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 14.28px; font-weight: 700;" x="0" y="0" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">Documentation</tspan></text>
+<g id="SvgjsG1021">
+  <rect id="SvgjsRect1020" x="19" y="158" width="209" height="6" style="fill: #39b54a;" rx="2" ry="2"></rect>
   </g>
-<text id="SvgjsText1016" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="0" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">100% completed</tspan></text>
-<text id="SvgjsText1015" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="0" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">0 open 2 closed</tspan></text>
+<text id="SvgjsText1019" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="0" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">100% completed</tspan></text>
+<text id="SvgjsText1018" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="0" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">0 open 2 closed</tspan></text>
 </g><g id="VersionProgress">
 <g id="ProgressBar" width="686" height="487">
   <rect x="26" y="447" width="646" height="30" rx="8.84" ry="8.84" style="fill: #527f55; opacity: .42;"></rect>
   <rect x="26" y="447" id="ProgressBarVersion" width="0" height="30" rx="8.84" ry="8.84" style="fill: #39b54a;"></rect>
 </g>
 <text id="VersionLabel" text-anchor="middle" x="45%" transform="translate(0 412.59) scale(1.14 1)" style="fill: #fffe2e; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 35.04px; font-weight: 700;" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="45%" svgjs:data="{&quot;newLined&quot;:true}">Version 1.0</tspan></text>
-</g><g id="SvgjsG1045">
-<rect id="SvgjsRect1044" x="9" y="176" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"></rect>
-<text id="SvgjsText1043" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 14.28px; font-weight: 700;" x="0" y="69" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">Game Server MSSP Module</tspan></text>
-<g id="SvgjsG1042">
-  <rect id="SvgjsRect1041" x="19" y="227" width="209" height="6" style="fill: #39b54a;" rx="2" ry="2"></rect>
+</g><g id="SvgjsG1048">
+<rect id="SvgjsRect1047" x="9" y="176" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"></rect>
+<text id="SvgjsText1046" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 14.28px; font-weight: 700;" x="0" y="69" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">Game Server MSSP Module</tspan></text>
+<g id="SvgjsG1045">
+  <rect id="SvgjsRect1044" x="19" y="227" width="209" height="6" style="fill: #39b54a;" rx="2" ry="2"></rect>
   </g>
-<text id="SvgjsText1040" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="69" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">100% completed</tspan></text>
-<text id="SvgjsText1039" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="69" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">0 open 3 closed</tspan></text>
-</g><g id="SvgjsG1068">
-<rect id="SvgjsRect1067" x="9" y="245" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"></rect>
-<text id="SvgjsText1066" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 14.28px; font-weight: 700;" x="0" y="138" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">Lobby Server MSSP Module</tspan></text>
-<g id="SvgjsG1065">
-  <rect id="SvgjsRect1064" x="19" y="296" width="139.33333333333331" height="6" style="fill: #39b54a;" rx="2" ry="2"></rect>
+<text id="SvgjsText1043" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="69" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">100% completed</tspan></text>
+<text id="SvgjsText1042" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="69" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">0 open 3 closed</tspan></text>
+</g><g id="SvgjsG1071">
+<rect id="SvgjsRect1070" x="9" y="245" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"></rect>
+<text id="SvgjsText1069" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 14.28px; font-weight: 700;" x="0" y="138" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">Lobby Server MSSP Module</tspan></text>
+<g id="SvgjsG1068">
+  <rect id="SvgjsRect1067" x="19" y="296" width="139.33333333333331" height="6" style="fill: #39b54a;" rx="2" ry="2"></rect>
   </g>
-<text id="SvgjsText1063" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="138" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">66.66666666666666% completed</tspan></text>
-<text id="SvgjsText1062" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="138" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">2 open 4 closed</tspan></text>
+<text id="SvgjsText1066" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="138" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">66.66666666666666% completed</tspan></text>
+<text id="SvgjsText1065" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="138" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">2 open 4 closed</tspan></text>
 </g></a></svg>
