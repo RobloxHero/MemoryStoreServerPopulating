@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="690" height="490"><a href="https://github.com/RobloxHero/MemoryStoreServerPopulating"><svg width="690" height="555" viewBox="0 0 690 555">
+  <defs>
+    <radialGradient id="radial-gradient" cx="136.68" cy="337.94" fx="136.68" fy="337.94" r="21.97" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ee9bff"></stop>
+      <stop offset="1" stop-color="#7200d2"></stop>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="518.52" cy="375.01" fx="518.52" fy="375.01" r="24.57" xlink:href="#radial-gradient"></radialGradient>
+    <radialGradient id="radial-gradient-3" cx="183.8" cy="399.83" fx="183.8" fy="399.83" r="19.73" xlink:href="#radial-gradient"></radialGradient>
+    <radialGradient id="radial-gradient-4" cx="308.01" cy="330.26" fx="308.01" fy="330.26" r="16.88" xlink:href="#radial-gradient"></radialGradient>
+    <radialGradient id="radial-gradient-5" cx="411.26" cy="359.84" fx="411.26" fy="359.84" r="13.7" xlink:href="#radial-gradient"></radialGradient>
+    <radialGradient id="radial-gradient-6" cx="572.48" cy="413.07" fx="572.48" fy="413.07" r="15.52" xlink:href="#radial-gradient"></radialGradient>
+    <radialGradient id="radial-gradient-7" cx="623.19" cy="358.21" fx="623.19" fy="358.21" r="19.2" xlink:href="#radial-gradient"></radialGradient>
+    <radialGradient id="radial-gradient-8" cx="61.94" cy="392.67" fx="61.94" fy="392.67" r="16.82" xlink:href="#radial-gradient"></radialGradient>
+  </defs>
+  <rect x="4" width="686" height="487" rx="8.84" ry="8.84" style="fill: #2c2c3d;"></rect>
+  <path id="GithubLogo" d="m43.45,14.83c9.96,0,18.03,8.07,18.03,18.03,0,7.75-4.94,14.63-12.28,17.1-.9.18-1.24-.38-1.24-.86,0-.61.02-2.55.02-4.96,0-1.69-.56-2.77-1.22-3.34,4.01-.45,8.23-1.98,8.23-8.9,0-1.98-.7-3.58-1.85-4.85.18-.45.81-2.3-.18-4.78,0,0-1.51-.5-4.96,1.85-1.44-.41-2.97-.61-4.51-.61s-3.06.2-4.51.61c-3.45-2.32-4.96-1.85-4.96-1.85-.99,2.48-.36,4.33-.18,4.78-1.15,1.26-1.85,2.88-1.85,4.85,0,6.9,4.19,8.45,8.2,8.9-.52.45-.99,1.24-1.15,2.41-1.04.47-3.63,1.24-5.25-1.49-.34-.54-1.35-1.87-2.77-1.85-1.51.02-.61.86.02,1.19.77.43,1.65,2.03,1.85,2.55.36,1.01,1.53,2.95,6.06,2.12,0,1.51.02,2.93.02,3.36,0,.47-.34,1.01-1.24.86-7.36-2.45-12.33-9.34-12.33-17.1,0-9.96,8.07-18.03,18.03-18.03Z" style="fill: #fff;"></path>
+  <path d="m600.63,22.43l2.41,7.84c.09.3.36.5.65.5h7.8c.66,0,.94.9.4,1.31l-6.31,4.84c-.24.18-.34.51-.25.81l2.41,7.84c.21.67-.52,1.22-1.06.81l-6.31-4.84c-.24-.18-.57-.18-.81,0l-6.31,4.84c-.54.41-1.26-.14-1.06-.81l2.41-7.84c.09-.3,0-.63-.25-.81l-6.31-4.84c-.54-.41-.26-1.31.4-1.31h7.8c.3,0,.56-.2.65-.5l2.41-7.84c.21-.67,1.1-.67,1.31,0Z" style="fill: #fffe2e;"></path>
+  <g id="Stars">
+    <polygon points="158.56 348.17 143.03 347.56 133.73 360 129.51 345.05 114.8 340.05 127.72 331.42 127.93 315.88 140.13 325.5 154.97 320.9 149.6 335.48 158.56 348.17" style="fill: url(#radial-gradient);"></polygon>
+    <polygon points="520.81 399.46 511.21 384.97 493.83 384.67 504.64 371.06 499.57 354.44 515.85 360.52 530.08 350.55 529.33 367.92 543.21 378.38 526.47 383.03 520.81 399.46" style="fill: url(#radial-gradient-2);"></polygon>
+    <polygon points="203.44 409.08 189.5 408.49 181.11 419.65 177.36 406.21 164.16 401.68 175.78 393.96 176.01 380.01 186.94 388.68 200.28 384.58 195.42 397.66 203.44 409.08" style="fill: url(#radial-gradient-3);"></polygon>
+    <polygon points="323.65 341.76 311.92 339.21 303.17 347.44 301.96 335.49 291.43 329.71 302.42 324.87 304.67 313.07 312.67 322.03 324.58 320.52 318.53 330.89 323.65 341.76" style="fill: url(#radial-gradient-4);"></polygon>
+    <polygon points="415.02 373.81 407.97 367.06 398.41 369.04 402.66 360.25 397.82 351.77 407.49 353.09 414.06 345.88 415.79 355.48 424.69 359.5 416.09 364.11 415.02 373.81" style="fill: url(#radial-gradient-5);"></polygon>
+    <polygon points="588.13 418.69 577.15 419.15 571.31 428.46 567.48 418.16 556.83 415.48 565.44 408.65 564.7 397.69 573.85 403.77 584.04 399.68 581.09 410.26 588.13 418.69" style="fill: url(#radial-gradient-6);"></polygon>
+    <polygon points="634.61 377.02 622.69 370.3 610.4 376.3 613.11 362.89 603.6 353.05 617.19 351.49 623.61 339.41 629.3 351.85 642.77 354.22 632.7 363.47 634.61 377.02" style="fill: url(#radial-gradient-7);"></polygon>
+    <polygon points="78.41 402.67 66.54 400.99 58.44 409.82 56.36 398.02 45.46 393.04 56.04 387.42 57.41 375.51 66.03 383.84 77.78 381.46 72.52 392.23 78.41 402.67" style="fill: url(#radial-gradient-8);"></polygon>
+  </g>
+  <text transform="translate(15.97 97.03) scale(.97 1)" style="fill: #c7b299; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 19.52px; font-weight: 800;" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}">Top 3 Milestones</text>
+</svg><text transform="translate(82.71 41.94) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 21.93px; font-weight: 700;" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">MemoryStoreServerPopulating</tspan></text><text transform="translate(621.88 46.34) scale(1.11 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 31.76px; font-weight: 700;" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">1</tspan></text><g id="SvgjsG1018">
+<rect id="SvgjsRect1017" x="9" y="107" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"></rect>
+<text id="SvgjsText1016" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 14.28px; font-weight: 700;" x="0" y="0" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">Documentation</tspan></text>
+<g id="SvgjsG1015">
+  <rect id="SvgjsRect1014" x="19" y="158" width="209" height="6" style="fill: #39b54a;" rx="2" ry="2"></rect>
+  </g>
+<text id="SvgjsText1013" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="0" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">100% completed</tspan></text>
+<text id="SvgjsText1012" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="0" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">0 open 2 closed</tspan></text>
+</g><g id="VersionProgress">
+<g id="ProgressBar" width="686" height="487">
+  <rect x="26" y="447" width="646" height="30" rx="8.84" ry="8.84" style="fill: #527f55; opacity: .42;"></rect>
+  <rect x="26" y="447" id="ProgressBarVersion" width="0" height="30" rx="8.84" ry="8.84" style="fill: #39b54a;"></rect>
+</g>
+<text id="VersionLabel" text-anchor="middle" x="45%" transform="translate(0 412.59) scale(1.14 1)" style="fill: #fffe2e; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 35.04px; font-weight: 700;" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="45%" svgjs:data="{&quot;newLined&quot;:true}">Version 1.0</tspan></text>
+</g><g id="SvgjsG1042">
+<rect id="SvgjsRect1041" x="9" y="176" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"></rect>
+<text id="SvgjsText1040" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 14.28px; font-weight: 700;" x="0" y="69" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">Game Server MSSP Module</tspan></text>
+<g id="SvgjsG1039">
+  <rect id="SvgjsRect1038" x="19" y="227" width="209" height="6" style="fill: #39b54a;" rx="2" ry="2"></rect>
+  </g>
+<text id="SvgjsText1037" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="69" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">100% completed</tspan></text>
+<text id="SvgjsText1036" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="69" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">0 open 3 closed</tspan></text>
+</g><g id="SvgjsG1065">
+<rect id="SvgjsRect1064" x="9" y="245" width="229" height="64" rx="8.94" ry="8.94" style="opacity: .28;"></rect>
+<text id="SvgjsText1063" transform="translate(16.42 124.68) scale(1.14 1)" style="fill: #fff; font-family: AdriannaCondensed-ExtraBold, 'Adrianna Condensed'; font-size: 14.28px; font-weight: 700;" x="0" y="138" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">Lobby Server MSSP Module</tspan></text>
+<g id="SvgjsG1062">
+  <rect id="SvgjsRect1061" x="19" y="296" width="139.33333333333331" height="6" style="fill: #39b54a;" rx="2" ry="2"></rect>
+  </g>
+<text id="SvgjsText1060" transform="translate(153.36 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="138" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">66.66666666666666% completed</tspan></text>
+<text id="SvgjsText1059" transform="translate(17.79 149) scale(.97 1)" style="fill: #fff; font-family: Roboto-Black, Roboto; font-size: 10.92px; font-weight: 800;" x="0" y="138" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"><tspan dy="0" x="0" svgjs:data="{&quot;newLined&quot;:true}">2 open 4 closed</tspan></text>
+</g></a></svg>
