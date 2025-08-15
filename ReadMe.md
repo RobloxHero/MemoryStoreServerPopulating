@@ -115,6 +115,6 @@ Download the Repo.
 Then, submit a pull request.
 
 If you would like to join the Team email us at
-<a src="mailto:team@mail.compassoftruth.app">team@mail.compassoftruth.app</a>
+<a src="mailto:team@mail.compassoftruth.app">rbreecedev@gmail.com</a>
 </div>
 
