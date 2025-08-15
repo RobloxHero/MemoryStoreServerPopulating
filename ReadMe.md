@@ -1,7 +1,7 @@
 <div align="center">
 <h3>This plugin is still in Development</h3>
 <br>
-<img width=125 src="https://storage.googleapis.com/compass-of-truth/images/ToolbarOpenWidget.jpg"/>
+<img width=125 src="./4.jpeg"/>
 </div>
 
 <div align="center">
@@ -11,7 +11,7 @@
 
 </h3>
 
-[Dev Forum Link](https://www.roblox.com/library/14113075182/Memory-Store-Server-Populating)
+[Dev Forum Link](https://devforum.roblox.com/t/memory-store-server-population-matchmaking/2452777)
 
 <br>
 </div>
@@ -94,11 +94,11 @@ MSSP.RemovePlayerFromServer(player)
 <hr>
 
 <div align="center">
-<img width=300 src="https://storage.googleapis.com/compass-of-truth/images/PluginGui_1_1.gif"/> 
-<img width=300 src="https://storage.googleapis.com/compass-of-truth/images/Plugin%20Explorer_1_2.gif"/> 
+<img width=300 src="./1.gif"/> 
+<img width=300 src="./2.gif"/> 
 </div>
 <div align="center">
-<img width=300 src="https://storage.googleapis.com/compass-of-truth/images/ServerAdmin_1_2.gif"/> 
+<img width=300 src="./3.gif"/> 
 </div>
 <hr>
 
